@@ -414,24 +414,26 @@ const Portfolio = () => {
             </div>
           </div>
         );
-      case 'education':
-        return (
-          <div className="space-y-8">
-            <h2 className="text-4xl mb-6 text-gray-800">Web Contents</h2>
-            <div className="space-y-6">
+        case 'education':
+          return (
+            <div className="space-y-8">
+              <h2 className="text-4xl mb-6 text-gray-800">Web Contents</h2>
+              <div className="space-y-6">
                 <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
                   <div className="flex flex-col lg:flex-row gap-6">
                     <div className="w-full lg:w-2/5">
-                      <img 
-                        src={dsyoutubeImage}
-                        alt={"データサイエンス塾!!"}
-                        className="w-full h-48 object-cover rounded-lg"
-                      />
+                      <div className="h-48 flex items-center justify-center rounded-lg">
+                        <img 
+                          src={dsyoutubeImage}
+                          alt="データサイエンス塾!!"
+                          className="w-full h-full object-contain rounded-lg"
+                        />
+                      </div>
                     </div>
                     <div className="w-full lg:w-3/5">
                       <h3 className="text-xl font-semibold mb-3 text-gray-800">データサイエンス塾!!</h3>
                       <p className="text-gray-600 mb-4">
-                      データ分析や人工知能(AI)開発の基本を無料で学べるYouTubeチャンネルです。ExcelやPythonによる実践を重視しています。
+                        データ分析や人工知能(AI)開発の基本を無料で学べるYouTubeチャンネルです。ExcelやPythonによる実践を重視しています。
                       </p>
                       <a
                         href="https://www.youtube.com/@nishimaki"
@@ -447,16 +449,18 @@ const Portfolio = () => {
                 <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
                   <div className="flex flex-col lg:flex-row gap-6">
                     <div className="w-full lg:w-2/5">
-                      <img 
-                        src={dssiteImage}
-                        alt={"データサイエンス塾"}
-                        className="w-full h-48 object-cover rounded-lg"
-                      />
+                      <div className="h-48 flex items-center justify-center rounded-lg">
+                        <img 
+                          src={dssiteImage}
+                          alt="データサイエンス塾"
+                          className="w-full h-full object-contain rounded-lg"
+                        />
+                      </div>
                     </div>
                     <div className="w-full lg:w-3/5">
                       <h3 className="text-xl font-semibold mb-3 text-gray-800">データサイエンス塾</h3>
                       <p className="text-gray-600 mb-4">
-                      YouTubeチャンネル「データサイエンス塾!!」と連動したデータサイエンス・統計学などの無料講座、ブラウザ上で動作する計算ツールなどを公開しているWebサイトです。
+                        YouTubeチャンネル「データサイエンス塾!!」と連動したデータサイエンス・統計学などの無料講座、ブラウザ上で動作する計算ツールなどを公開しているWebサイトです。
                       </p>
                       <a
                         href="https://analysis-navi.com/"
@@ -469,93 +473,86 @@ const Portfolio = () => {
                     </div>
                   </div>
                 </div>
-              
+              </div>
             </div>
-          </div>
-        );
-      case 'products':
-        return (
-          <div className="space-y-8">
-            <h2 className="text-4xl mb-6 text-gray-800">Products</h2>
-            <div className="space-y-6">
-                <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                  <div className="flex flex-col lg:flex-row gap-6">
-                    <div className="w-full lg:w-2/5">
-                      <img 
-                        src={decidenowImage}
-                        alt={"DecideNow"}
-                        className="w-full h-48 object-cover rounded-lg"
-                      />
+          );
+          case 'products':
+            return (
+              <div className="space-y-8">
+                <h2 className="text-4xl mb-6 text-gray-800">Products</h2>
+                <div className="space-y-6">
+                  <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div className="flex flex-col lg:flex-row gap-6">
+                      <div className="w-full lg:w-2/5">
+                        <div className="h-48 flex items-center justify-center rounded-lg">
+                          <img 
+                            src={decidenowImage}
+                            alt="DecideNow"
+                            className="w-full h-full object-contain rounded-lg"
+                          />
+                        </div>
+                      </div>
+                      <div className="w-full lg:w-3/5">
+                        <h3 className="text-xl font-semibold mb-3 text-gray-800">DecideNow</h3>
+                        <p className="text-gray-600 mb-4">
+                          AHP（階層分析法）を用いた"論理的な意思決定"をスマートフォンでいつでも簡単に実行できるようにしたアプリです。
+                        </p>
+                        <div className="flex gap-3">
+                          <a
+                            href="https://apps.apple.com/jp/app/id6596765054"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-100 focus:ring-offset-2 transition-shadow"
+                          >
+                            <Box className="mr-2 h-4 w-4" />
+                            iOS App Store
+                          </a>
+                          <a
+                            href="https://play.google.com/store/apps/details?id=com.rollapps.decidenow"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-100 focus:ring-offset-2 transition-shadow"
+                          >
+                            <Box className="mr-2 h-4 w-4" />
+                            Google Play Store
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                    <div className="w-full lg:w-3/5">
-                      <h3 className="text-xl font-semibold mb-3 text-gray-800">DecideNow</h3>
-                      <p className="text-gray-600 mb-4">
-                      AHP（階層分析法）を用いた"論理的な意思決定"をスマートフォンでいつでも簡単に実行できるようにしたアプリです。
-                      </p>
-                      <div className="flex gap-3">
-                        <a
-                          href="https://apps.apple.com/jp/app/id6596765054"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-100 focus:ring-offset-2 transition-shadow"
-                        >
-                          <Box className="mr-2 h-4 w-4" />
-                          iOS App Store
-                        </a>
-                        <a
-                          href="https://play.google.com/store/apps/details?id=com.rollapps.decidenow"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-100 focus:ring-offset-2 transition-shadow"
-                        >
-                          <Box className="mr-2 h-4 w-4" />
-                          Google Play Store
-                        </a>
+                  </div>
+                  <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div className="flex flex-col lg:flex-row gap-6">
+                      <div className="w-full lg:w-2/5">
+                        <div className="h-48 flex items-center justify-center rounded-lg">
+                          <img 
+                            src={yasaiImage}
+                            alt="野菜価格"
+                            className="w-full h-full object-contain rounded-lg"
+                          />
+                        </div>
+                      </div>
+                      <div className="w-full lg:w-3/5">
+                        <h3 className="text-xl font-semibold mb-3 text-gray-800">野菜価格</h3>
+                        <p className="text-gray-600 mb-4">
+                          いま安く買える野菜／果物を数値で一目で確認できる、家計お助けアプリです。市場に多く出回っている野菜が優先的に購入されることで、日本全体のフードロス削減にも繋がります。
+                        </p>
+                        <div className="flex gap-3">
+                          <a
+                            href="https://apps.apple.com/jp/app/id6737188459"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-100 focus:ring-offset-2 transition-shadow"
+                          >
+                            <Box className="mr-2 h-4 w-4" />
+                            iOS App Store
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                  <div className="flex flex-col lg:flex-row gap-6">
-                    <div className="w-full lg:w-2/5">
-                      <img 
-                        src={yasaiImage} 
-                        alt={"野菜価格"}
-                        className="w-full h-48 object-cover rounded-lg"
-                      />
-                    </div>
-                    <div className="w-full lg:w-3/5">
-                      <h3 className="text-xl font-semibold mb-3 text-gray-800">野菜価格</h3>
-                      <p className="text-gray-600 mb-4">
-                      いま安く買える野菜／果物を数値で一目で確認できる、家計お助けアプリです。市場に多く出回っている野菜が優先的に購入されることで、日本全体のフードロス削減にも繋がります。
-                      </p>
-                      <div className="flex gap-3">
-                        <a
-                          href="https://apps.apple.com/jp/app/id6737188459"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-100 focus:ring-offset-2 transition-shadow"
-                        >
-                          <Box className="mr-2 h-4 w-4" />
-                          iOS App Store
-                        </a>
-                        {/* <a
-                          href="https://play.google.com/store/apps/details?id=decidenow"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-100 focus:ring-offset-2 transition-shadow"
-                        >
-                          <Box className="mr-2 h-4 w-4" />
-                          Google Play Store
-                        </a> */}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              
-            </div>
-          </div>
-        );
+              </div>
+            );
       case 'mail':
         return (
           <div className="space-y-8">
