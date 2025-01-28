@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, FileText, User, Box, GraduationCap, Video, Youtube } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText, User, Box, GraduationCap, Video, Youtube, Globe } from 'lucide-react';
 import { Helmet } from 'react-helmet';
 
 import dsyoutubeImage from './assets/ds-youtube.jpg';
@@ -18,7 +18,7 @@ const SEOMetaTags = ({ activeSection }) => {
         return `${baseTitle} | Publications`;
       case 'presentations':
         return `${baseTitle} | Presentations`;
-      case 'education':
+      case 'web-contents':
         return `${baseTitle} | Web Contents`;
       case 'products':
         return `${baseTitle} | Products`;
@@ -75,11 +75,11 @@ const SchemaOrg = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "西巻拓真",
+    "name": "西巻 拓真 / Takuma Nishimaki真",
     "alternateName": "Takuma Nishimaki",
-    "jobTitle": "Data Scientist & Algorithm Researcher",
+    "jobTitle": "Freelance Data Scientist",
     "description": "フリーランスのデータサイエンティスト／AIエンジニアです。",
-    "url": "https://your-domain.com",
+    "url": "https://tnishimaki.com",
     "sameAs": [
       "https://github.com/t-24maki/",
       "https://x.com/t_nsmk",
@@ -87,13 +87,12 @@ const SchemaOrg = () => {
       "https://www.youtube.com/@nishimaki/"
     ],
     "knowsAbout": [
-      "Data Science",
-      "Machine Learning",
-      "Statistical Analysis",
-      "Algorithm Development",
-      "Molecular Phylogenetics",
-      "Python Programming",
-      "Web Development"
+      "データサイエンス",
+      "機械学習",
+      "統計解析",
+      "分子系統学",
+      "Python",
+      "Excel"
     ],
     "alumniOf": {
       "@type": "Organization",
@@ -125,7 +124,7 @@ const Portfolio = () => {
     { id: 'profile', label: 'Profile', icon: User },
     { id: 'publications', label: 'Publications', icon: FileText },
     { id: 'presentations', label: 'Presentations', icon: Video },
-    { id: 'education', label: 'Web Contents', icon: GraduationCap },
+    { id: 'web-contents', label: 'Web Contents', icon: Globe },
     { id: 'products', label: 'Products', icon: Box },
     { id: 'mail', label: 'Contact', icon: Mail },
   ];
@@ -145,51 +144,51 @@ const Portfolio = () => {
             <h2 className="text-4xl mb-6 text-gray-800">Profile</h2>
             <div className="prose max-w-none">
               <p className="text-gray-600 text-lg leading-relaxed">
-              SIer・コンサルティングファームにおいて、エンジニアやデータサイエンティストとしてAI開発やデータドリブン経営支援などに10年以上従事しました。個人活動として、分子系統解析を始めとしたAI/データサイエンス技術に関するアルゴリズム研究開発・オンライン教育コンテンツ作成・Webアプリ企画開発に取り組んでいます。
+                SIer・コンサルティングファームにおいて、エンジニアやデータサイエンティストとしてAI開発やデータドリブン経営支援などに10年以上従事しました。個人活動として、分子系統解析を始めとしたAI/データサイエンス技術に関するアルゴリズム研究開発・オンライン教育コンテンツ作成・Webアプリ企画開発に取り組んでいます。
               </p>
               <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">担当業務</h3>
               <div className="space-y-6">
                 <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
                   <h4 className="text-xl font-bold mb-4 text-gray-800">データ利活用アドバイザリー</h4>
                   <ul className="text-gray-600 space-y-2">
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-baseline">
+                      <div className="flex-shrink-0 w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-1.5"></div>
                       データサイエンスによる課題解決の一貫支援（課題抽出、データ解析、結果解釈、業務への組込み、効果検証）
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       組織データ利活用の推進支援
                     </li>
                   </ul>
                   <br></br>
                   <h4 className="text-xl font-bold mb-4 text-gray-800">AI／データ分析ソリューション開発</h4>
                   <ul className="text-gray-600 space-y-2">
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       データ分析関連プロダクト/ソリューション企画とモック開発
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       AIアルゴリズムの構築と改善
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       新規性の高い分析アルゴリズムの研究開発と論文執筆
                     </li>
                   </ul>
                   <br></br>
                   <h4 className="text-xl font-bold mb-4 text-gray-800">AI／データサイエンス教育</h4>
                   <ul className="text-gray-600 space-y-2">
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       企業や大学における研修企画と講師業
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       教育コンテンツ制作
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       データ活用人材の育成
                     </li>
                   </ul>
@@ -200,80 +199,77 @@ const Portfolio = () => {
                 <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
                   <h4 className="text-xl font-bold mb-4 text-gray-800">AIモデリング・データ分析技術</h4>
                   <ul className="text-gray-600 space-y-2">
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       統計解析：多変量解析、ベイズ推定、因果推論など
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       機械学習：教師あり学習（回帰・分類）、教師なし学習（クラスタリングなど）
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       数理最適化：組合せ最適化、遺伝的アルゴリズムなど
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       自然言語処理：TF-IDF、Doc2vec、BERTなど
                     </li>
                   </ul>
                   <br></br>
                   <h4 className="text-xl font-bold mb-4 text-gray-800">開発言語・フレームワーク</h4>
                   <ul className="text-gray-600 space-y-2">
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       Python：NumPy, pandas, scikit-learn, TensorFlowなど
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       TypeScript/JavaScript：React
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       R：tidyverse, ggplot2など
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       SQL：PostgreSQL
                     </li>
                   </ul>
                   <br></br>
                   <h4 className="text-xl font-bold mb-4 text-gray-800">開発環境</h4>
                   <ul className="text-gray-600 space-y-2">
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       クラウド：AWS
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       コンテナ：Docker
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       開発環境：JupyterLab, Google Colab
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       バージョン管理：Git, GitHub
                     </li>
                   </ul>
                   <br></br>
                   <h4 className="text-xl font-bold mb-4 text-gray-800">分析・可視化ツール</h4>
                   <ul className="text-gray-600 space-y-2">
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       BI：Tableau, Power BI
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                    <li className="flex items-start">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                       データ加工：Alteryx
                     </li>
                   </ul>
-
                 </div>
               </div>
-
-
             </div>
           </div>
         );
@@ -414,7 +410,7 @@ const Portfolio = () => {
             </div>
           </div>
         );
-        case 'education':
+        case 'web-contents':
           return (
             <div className="space-y-8">
               <h2 className="text-4xl mb-6 text-gray-800">Web Contents</h2>
