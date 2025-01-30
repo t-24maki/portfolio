@@ -144,7 +144,7 @@ const Portfolio = () => {
             <h2 className="text-4xl mb-6 text-gray-800">Profile</h2>
             <div className="prose max-w-none">
               <p className="text-gray-600 text-lg leading-relaxed">
-                SIer・コンサルティングファームにおいて、エンジニアやデータサイエンティストとしてAI開発やデータドリブン経営支援などに10年以上従事しました。個人活動として、分子系統解析を始めとしたAI/データサイエンス技術に関するアルゴリズム研究開発・オンライン教育コンテンツ作成・Webアプリ企画開発に取り組んでいます。
+                SIer・コンサルティングファームにおいて、エンジニアorデータサイエンティストとしてAI開発やデータドリブン経営支援案件に10年以上従事し、独立しました。個人活動として、分子系統解析を中心とした分析アルゴリズム研究開発・オンライン教育コンテンツ作成・Webアプリ企画開発に取り組んでいます。
               </p>
               <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">担当業務</h3>
               <div className="space-y-6">
@@ -161,7 +161,7 @@ const Portfolio = () => {
                     </li>
                   </ul>
                   <br></br>
-                  <h4 className="text-xl font-bold mb-4 text-gray-800">AI／データ分析ソリューション開発</h4>
+                  <h4 className="text-xl font-bold mb-4 text-gray-800">AI／データ分析アルゴリズム開発</h4>
                   <ul className="text-gray-600 space-y-2">
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
@@ -173,7 +173,7 @@ const Portfolio = () => {
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      新規性の高い分析アルゴリズムの研究開発と論文執筆
+                      新規性の高いアルゴリズム研究開発と論文執筆
                     </li>
                   </ul>
                   <br></br>
@@ -181,15 +181,15 @@ const Portfolio = () => {
                   <ul className="text-gray-600 space-y-2">
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      企業や大学における研修企画と講師業
+                      企業や大学における研修企画と講師
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      教育コンテンツ制作
+                      オンライン教育コンテンツ制作
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      データ活用人材の育成
+                      データ利活用人材の育成
                     </li>
                   </ul>
                 </div>
@@ -225,7 +225,7 @@ const Portfolio = () => {
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      TypeScript/JavaScript：React
+                      TypeScript/JavaScript：React, React Native
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
@@ -233,7 +233,7 @@ const Portfolio = () => {
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      SQL：PostgreSQL
+                      SQL：PostgreSQL, SQLite3
                     </li>
                   </ul>
                   <br></br>
@@ -241,7 +241,7 @@ const Portfolio = () => {
                   <ul className="text-gray-600 space-y-2">
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      クラウド：AWS
+                      クラウド：AWS(EC2, S3, Lambdaなど)
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
@@ -491,7 +491,7 @@ const Portfolio = () => {
                       <div className="w-full lg:w-3/5">
                         <h3 className="text-xl font-semibold mb-3 text-gray-800">DecideNow</h3>
                         <p className="text-gray-600 mb-4">
-                          AHP（階層分析法）を用いた"論理的な意思決定"をスマートフォンでいつでも簡単に実行できるようにしたアプリです。
+                          AHP（階層分析法）を用いた"論理的な意思決定"をスマートフォンでいつでも簡単に実行できるアプリです。
                         </p>
                         <div className="flex gap-3">
                           <a
@@ -530,7 +530,7 @@ const Portfolio = () => {
                       <div className="w-full lg:w-3/5">
                         <h3 className="text-xl font-semibold mb-3 text-gray-800">野菜価格</h3>
                         <p className="text-gray-600 mb-4">
-                          いま安く買える野菜／果物を数値で一目で確認できる、家計お助けアプリです。市場に多く出回っている野菜が優先的に購入されることで、日本全体のフードロス削減にも繋がります。
+                          いま安く買える野菜／果物を一目で確認できる、家計お助けアプリです。市場に多く出回っている野菜が優先的に購入されることで、日本全体のフードロス削減にも繋がります。
                         </p>
                         <div className="flex gap-3">
                           <a
