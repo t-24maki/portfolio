@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Github, Linkedin, Mail, FileText, User, Box, GraduationCap, Video, Youtube, Globe } from 'lucide-react';
 import { Helmet } from 'react-helmet';
 
+import { Menu, X } from 'lucide-react';
+import MobileNav from './MobileNav';
+
 import dsyoutubeImage from './assets/ds-youtube.jpg';
 import dssiteImage from './assets/ds-site.jpg';
 import decidenowImage from './assets/decidenow.jpg';
@@ -144,7 +147,7 @@ const Portfolio = () => {
             <h2 className="text-4xl mb-6 text-gray-800">Profile</h2>
             <div className="prose max-w-none">
               <p className="text-gray-600 text-lg leading-relaxed">
-                SIer・コンサルティングファームにおいて、エンジニアorデータサイエンティストとしてAI開発やデータドリブン経営支援案件に10年以上従事し、独立しました。個人活動として、分子系統解析を中心とした分析アルゴリズム研究開発・オンライン教育コンテンツ作成・Webアプリ企画開発に取り組んでいます。
+                SIer・コンサルティングファームにおいて、エンジニアorデータサイエンティストとしてAI開発やデータドリブン経営支援業務に10年以上従事し、独立しました。個人活動として、分子系統解析を中心としたデータ分析アルゴリズム研究開発・オンライン教育コンテンツ作成・Webアプリ企画開発に取り組んでいます。
               </p>
               <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">担当業務</h3>
               <div className="space-y-6">
@@ -165,7 +168,7 @@ const Portfolio = () => {
                   <ul className="text-gray-600 space-y-2">
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      データ分析関連プロダクト/ソリューション企画とモック開発
+                      データ利活用ソリューションの企画・モック開発
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
@@ -498,7 +501,7 @@ const Portfolio = () => {
                             href="https://apps.apple.com/jp/app/id6596765054"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-100 focus:ring-offset-2 transition-shadow"
+                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-offset-2 transition-shadow"
                           >
                             <Box className="mr-2 h-4 w-4" />
                             iOS App Store
@@ -507,7 +510,7 @@ const Portfolio = () => {
                             href="https://play.google.com/store/apps/details?id=com.rollapps.decidenow"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-100 focus:ring-offset-2 transition-shadow"
+                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-offset-2 transition-shadow"
                           >
                             <Box className="mr-2 h-4 w-4" />
                             Google Play Store
@@ -537,7 +540,7 @@ const Portfolio = () => {
                             href="https://apps.apple.com/jp/app/id6737188459"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-100 focus:ring-offset-2 transition-shadow"
+                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-offset-2 transition-shadow"
                           >
                             <Box className="mr-2 h-4 w-4" />
                             iOS App Store
@@ -571,9 +574,15 @@ const Portfolio = () => {
       <SEOMetaTags activeSection={activeSection} />
       <SchemaOrg />
       <div className="container mx-auto">
+        <MobileNav
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+          menuItems={menuItems}
+          socialLinks={socialLinks}
+        />
         <div className="flex flex-col md:flex-row min-h-screen">
           {/* 左サイドバー */}
-          <div className="md:w-64 bg-white p-8 border-r border-gray-100 md:sticky md:top-0 md:h-screen">
+          <div className="hidden md:block md:w-64 bg-white p-8 border-r border-gray-100 md:sticky md:top-0 md:h-screen">
             <div className="h-full flex flex-col">
               <div className="flex-none">
                 <h1 className="text-2xl mb-8 text-gray-800">西巻 拓真 / Takuma Nishimaki</h1>
