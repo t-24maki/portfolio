@@ -16,17 +16,17 @@ const SEOMetaTags = ({ activeSection }) => {
     const baseTitle = "西巻 拓真 / Takuma Nishimaki";
     switch (activeSection) {
       case 'profile':
-        return `${baseTitle} | Profile`;
+        return `${baseTitle}`;
       case 'publications':
-        return `${baseTitle} | Publications`;
+        return `${baseTitle} [Publications]`;
       case 'presentations':
-        return `${baseTitle} | Presentations`;
+        return `${baseTitle} [Presentations]`;
       case 'web-contents':
-        return `${baseTitle} | Web Contents`;
+        return `${baseTitle} [Web Contents]`;
       case 'products':
-        return `${baseTitle} | Products`;
+        return `${baseTitle} [Products]`;
       case 'mail':
-        return `${baseTitle} | Contact`;
+        return `${baseTitle} [Contact]`;
       default:
         return baseTitle;
     }
@@ -147,7 +147,7 @@ const Portfolio = () => {
             <h2 className="text-4xl mb-6 text-gray-800">Profile</h2>
             <div className="prose max-w-none">
               <p className="text-gray-600 text-lg leading-relaxed">
-                SIer・コンサルティングファームにおいて、エンジニアorデータサイエンティストとしてAI開発やデータドリブン経営支援業務に10年以上従事し、独立しました。個人活動として、分子系統解析を中心としたデータ分析アルゴリズム研究開発・オンライン教育コンテンツ作成・Webアプリ企画開発に取り組んでいます。
+                SIer／コンサルティングファームにおいて、データサイエンティストとしてデータドリブン文化変革支援やAI開発業務に10年以上従事し、独立しました。個人活動として、分子系統解析を中心としたデータ分析アルゴリズム研究開発・オンライン教育コンテンツ作成・Webアプリ企画開発に取り組んでいます。
               </p>
               <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">担当業務</h3>
               <div className="space-y-6">
@@ -172,11 +172,11 @@ const Portfolio = () => {
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      AIアルゴリズムの構築と改善
+                      分析アルゴリズムの研究開発と論文執筆
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      新規性の高いアルゴリズム研究開発と論文執筆
+                      AIアルゴリズムの構築と改善
                     </li>
                   </ul>
                   <br></br>
@@ -184,7 +184,7 @@ const Portfolio = () => {
                   <ul className="text-gray-600 space-y-2">
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      企業や大学における研修企画と講師
+                      企業／大学における研修企画と講師
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
@@ -244,7 +244,7 @@ const Portfolio = () => {
                   <ul className="text-gray-600 space-y-2">
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                      クラウド：AWS(EC2, S3, Lambdaなど)
+                      クラウド：AWS
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
@@ -533,7 +533,7 @@ const Portfolio = () => {
                       <div className="w-full lg:w-3/5">
                         <h3 className="text-xl font-semibold mb-3 text-gray-800">野菜価格</h3>
                         <p className="text-gray-600 mb-4">
-                          いま安く買える野菜／果物を一目で確認できる、家計お助けアプリです。市場に多く出回っている野菜が優先的に購入されることで、日本全体のフードロス削減にも繋がります。
+                          リアルタイムで安く買える野菜／果物が確認できる、家計お助けアプリです。市場に多く出回っている野菜が優先的に購入されることで、日本全体のフードロス削減にも繋がります。
                         </p>
                         <div className="flex gap-3">
                           <a
