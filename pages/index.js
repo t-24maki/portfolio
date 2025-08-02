@@ -10,7 +10,7 @@ const schemaData = {
   "name": "西巻 拓真 / Takuma Nishimaki",
   "alternateName": "Takuma Nishimaki",
   "jobTitle": "Freelance Data Scientist",
-  "description": "フリーランスのデータサイエンティスト／AIエンジニアです。",
+  "description": "企業のデータ利活用支援や研修講師を行うフリーランスのデータサイエンティストです。",
   "url": "https://tnishimaki.com",
   "sameAs": [
     "https://github.com/t-24maki/",
@@ -20,6 +20,7 @@ const schemaData = {
   ],
   "knowsAbout": [
     "データサイエンス",
+    "フリーランス",
     "機械学習",
     "統計解析",
     "分子系統学",
@@ -38,19 +39,19 @@ export default function Home() {
     <>
       <Head>
         <title>西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="フリーランスのデータサイエンティスト／AIエンジニアです。" />
+        <meta name="description" content="企業のデータ利活用支援や研修講師を行うフリーランスのデータサイエンティストです。" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         {/* OGP Tags */}
         <meta property="og:title" content="西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="フリーランスのデータサイエンティスト／AIエンジニアです。" />
+        <meta property="og:description" content="企業のデータ利活用支援や研修講師を行うフリーランスのデータサイエンティストです。" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tnishimaki.com" />
         
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="フリーランスのデータサイエンティスト／AIエンジニアです。" />
+        <meta name="twitter:description" content="企業のデータ利活用支援や研修講師を行うフリーランスのデータサイエンティストです。" />
         
         {/* Keywords */}
         <meta name="keywords" content="データサイエンティスト,データサイエンス,AI,機械学習,統計学,分子系統学,Python,Excel,データ分析,教育" />
@@ -66,7 +67,9 @@ export default function Home() {
         <h2 className="text-4xl mb-6 text-gray-800">Profile</h2>
         <div className="prose max-w-none">
           <p className="text-gray-600 text-lg leading-relaxed">
-            SIer／コンサルティングファームにおいて、データサイエンティストとしてデータドリブン文化変革支援やAI開発業務に10年以上従事し、独立しました。個人活動として、分子系統解析を中心としたデータ分析アルゴリズム研究開発・オンライン教育コンテンツ作成・Webアプリ企画開発に取り組んでいます。
+            フリーランスとしてデータ利活用支援や研修講師の業務を請け負っているデータサイエンティストです。
+            SIer／コンサルティングファームにおいて、データドリブンマーケティング支援やAI開発業務に10年以上従事し、独立しました。
+            個人活動として、分子系統解析の研究開発・オンライン教育コンテンツ作成・Webアプリ企画開発に取り組んでいます。
           </p>
 
           <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">担当業務</h3>
@@ -76,43 +79,31 @@ export default function Home() {
               <ul className="text-gray-600 space-y-2">
                 <li className="flex items-baseline">
                   <div className="flex-shrink-0 w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-1.5"></div>
-                  データサイエンスによる課題解決の一貫支援（課題抽出、データ解析、結果解釈、業務への組込み、効果検証）
+                  経営課題解決に向けたデータ利活用の推進と全体設計
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                  組織データ利活用の推進支援
-                </li>
-              </ul>
-
-              <h4 className="text-xl font-bold mb-4 mt-8 text-gray-800">AI／データ分析アルゴリズム開発</h4>
-              <ul className="text-gray-600 space-y-2">
-                <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                  データ利活用ソリューションの企画・モック開発
+                  要件定義から効果測定までの継続的な分析・業務設計の伴走
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                  分析アルゴリズムの研究開発と論文執筆
+                  社内外の構造化・非構造化データを活用した意思決定
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                  AIアルゴリズムの構築と改善
+                  学術的な裏付けと実用性を兼ね備えた分析アルゴリズム設計
                 </li>
               </ul>
 
-              <h4 className="text-xl font-bold mb-4 mt-8 text-gray-800">AI／データサイエンス教育</h4>
+              <h4 className="text-xl font-bold mb-4 mt-8 text-gray-800">データサイエンス教育／研修</h4>
               <ul className="text-gray-600 space-y-2">
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                  企業／大学における研修企画と講師
+                  企業・大学向けの教育企画、カリキュラム設計、教材開発、講義、フォロー
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                  オンライン教育コンテンツ制作
-                </li>
-                <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                  データ利活用人材の育成
+                  技術面と実務面をいずれも意識した、即戦力となる社内人材の育成
                 </li>
               </ul>
             </div>
@@ -160,6 +151,22 @@ export default function Home() {
                   SQL：PostgreSQL, SQLite3
                 </li>
               </ul>
+              <h4 className="text-xl font-bold mb-4 mt-8 text-gray-800">分析・可視化ツール</h4>
+              <ul className="text-gray-600 space-y-2">
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
+                  BI：Tableau, Power BI
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
+                  データ加工：Alteryx
+                </li>
+                 <li className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
+                  Notebook環境：JupyterLab, GoogleColab
+                </li>
+
+              </ul>
 
               <h4 className="text-xl font-bold mb-4 mt-8 text-gray-800">開発環境</h4>
               <ul className="text-gray-600 space-y-2">
@@ -173,25 +180,10 @@ export default function Home() {
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                  開発環境：JupyterLab, Google Colab
-                </li>
-                <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
                   バージョン管理：Git, GitHub
                 </li>
               </ul>
 
-              <h4 className="text-xl font-bold mb-4 mt-8 text-gray-800">分析・可視化ツール</h4>
-              <ul className="text-gray-600 space-y-2">
-                <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                  BI：Tableau, Power BI
-                </li>
-                <li className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2"></div>
-                  データ加工：Alteryx
-                </li>
-              </ul>
             </div>
           </div>
         </div>

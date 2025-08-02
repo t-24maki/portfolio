@@ -21,7 +21,7 @@ export default function Sidebar() {
       <div className="h-full flex flex-col">
         <div className="flex-none">
           <h1 className="text-2xl mb-8 text-gray-800">西巻 拓真 / Takuma Nishimaki</h1>
-          <h2 className="text-xl mb-12 text-gray-500">Freelance Data Scientist & Algorithm Researcher</h2>
+          <h2 className="text-xl mb-12 text-gray-500">Data Scientist (Freelance)</h2>
         </div>
         
         {/* メインナビゲーション */}

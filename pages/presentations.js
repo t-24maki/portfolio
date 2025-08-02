@@ -6,24 +6,48 @@ export default function Presentations() {
     <>
       <Head>
         <title>西巻 拓真 / Takuma Nishimaki [Presentations]</title>
-        <meta name="description" content="学会発表、研究発表などの一覧です。" />
+        <meta name="description" content="基調講演、学会発表、研究発表などの一覧です。" />
         
         {/* OGP Tags */}
         <meta property="og:title" content="西巻 拓真 / Takuma Nishimaki [Presentations]" />
-        <meta property="og:description" content="学会発表、研究発表などの一覧です。" />
+        <meta property="og:description" content="基調講演、学会発表、研究発表などの一覧です。" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tnishimaki.com/presentations" />
         
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="西巻 拓真 / Takuma Nishimaki [Presentations]" />
-        <meta name="twitter:description" content="学会発表、研究発表などの一覧です。" />
+        <meta name="twitter:description" content="基調講演、学会発表、研究発表などの一覧です。" />
       </Head>
 
       <div className="space-y-8">
         <h2 className="text-4xl mb-6 text-gray-800">Presentations</h2>
         <div className="space-y-6">
-          <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">口頭発表(英語)</h3>
+
+          <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">講演</h3>
+          
+          <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+            <h3 className="text-xl font-semibold mb-3 text-gray-800">
+              医学研究のデータはここが面白い！『データサイエンティストのためのこれからのキャリア戦略』
+            </h3>
+            <p className="text-gray-500">
+               2025.8.5 パーソルイノベーション株式会社
+            </p>
+          </div>
+
+          <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">国際学会 口頭発表</h3>
+          
+          <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+            <h3 className="text-xl font-semibold mb-3 text-gray-800">
+              Evaluation of molecular phylogenetic trees by an information-theoretic metric
+            </h3>
+            <p className="text-gray-600 mb-2">
+              <b><u>T.Nishimaki</u></b>, K.Sato
+            </p>
+            <p className="text-gray-500">
+               Evolution 2025, Athens, GA, 2025
+            </p>
+          </div>
           
           <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
             <h3 className="text-xl font-semibold mb-3 text-gray-800">
@@ -37,7 +61,8 @@ export default function Presentations() {
             </p>
           </div>
 
-          <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">ポスター発表(英語)</h3>
+
+          <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">国際学会 ポスター発表</h3>
           
           <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
             <h3 className="text-xl font-semibold mb-3 text-gray-800">
@@ -63,7 +88,7 @@ export default function Presentations() {
             </p>
           </div>
 
-          <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">口頭発表(日本語)</h3>
+          <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">国内学会 口頭発表</h3>
           
           <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
             <h3 className="text-xl font-semibold mb-3 text-gray-800">ギャップサイトを活用した新しい進化距離の尺度</h3>
@@ -105,7 +130,7 @@ export default function Presentations() {
             </p>
           </div>
 
-          <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">ポスター発表(日本語)</h3>
+          <h3 className="text-2xl font-semibold mt-12 mb-6 text-gray-800">国内学会 ポスター発表</h3>
           
           <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
             <h3 className="text-xl font-semibold mb-3 text-gray-800">塩基の挿入／欠失を考慮した遺伝的差異</h3>
