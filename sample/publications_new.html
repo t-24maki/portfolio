@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications - 西巻 拓真 / Takuma Nishimaki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #f7f7f5;
+      --color-surface: #ffffff;
+      --color-surface-alt: #f0f0ed;
+      --color-border: #e0e0dc;
+      --color-border-subtle: #eaeae6;
+      --color-text-primary: #1a1a1a;
+      --color-text-secondary: #5c5c5c;
+      --color-text-tertiary: #8a8a8a;
+      --color-accent: #2a2a2a;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'Noto Sans JP', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-text-primary);
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, var(--color-bg) 60%, transparent 100%);
+      transition: background 0.3s ease;
+    }
+
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-logo:hover {
+      color: var(--color-text-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-text-primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--color-text-primary);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Page Header */
+    .page-header {
+      padding: 10rem 3rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .page-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-description {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    /* Content Section */
+    .content-section {
+      padding: 0 3rem 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Category */
+    .category {
+      margin-bottom: 4rem;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .category-title {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .category-count {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-text-tertiary);
+      padding: 0.2rem 0.5rem;
+      background: var(--color-surface-alt);
+    }
+
+    /* Table */
+    .entries-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .entries-table thead {
+      display: none;
+    }
+
+    .entries-table tr {
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .entries-table td {
+      padding: 1.25rem 0;
+      vertical-align: top;
+    }
+
+    .entry-year {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--color-text-tertiary);
+      width: 80px;
+      padding-right: 1.5rem;
+    }
+
+    .entry-content {
+      padding-right: 2rem;
+    }
+
+    .entry-title {
+      font-size: 0.95rem;
+      color: var(--color-text-primary);
+      line-height: 1.6;
+    }
+
+    .entry-authors {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.35rem;
+    }
+
+    .entry-authors strong {
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+
+    .entry-journal {
+      font-size: 0.85rem;
+      color: var(--color-text-tertiary);
+      font-style: italic;
+      margin-top: 0.25rem;
+    }
+
+    .entry-actions {
+      min-width: 120px;
+      text-align: right;
+      vertical-align: middle;
+    }
+
+    .entry-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-border);
+      transition: all 0.3s ease;
+    }
+
+    .entry-link:hover {
+      color: var(--color-text-primary);
+      border-color: var(--color-text-primary);
+    }
+
+    .entry-link svg {
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
+      fill: none;
+      transition: transform 0.3s ease;
+    }
+
+    .entry-link:hover svg {
+      transform: translateX(2px);
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem;
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-text-tertiary);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--color-text-tertiary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-top:hover {
+      color: var(--color-text-primary);
+    }
+
+    .footer-top svg {
+      transition: transform 0.3s ease;
+    }
+
+    .footer-top:hover svg {
+      transform: translateY(-3px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .page-header,
+      .content-section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .entries-table td {
+        display: block;
+        padding: 0;
+      }
+
+      .entries-table tr {
+        display: block;
+        padding: 1.25rem 0;
+      }
+
+      .entry-year {
+        width: auto;
+        margin-bottom: 0.5rem;
+      }
+
+      .entry-content {
+        padding-right: 0;
+      }
+
+      .entry-actions {
+        text-align: left;
+        margin-top: 1rem;
+      }
+
+      footer {
+        padding: 2rem 1.5rem;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="/" class="nav-logo">T. Nishimaki</a>
+    <ul class="nav-links">
+      <li><a href="/">Top</a></li>
+      <li><a href="/#tools">Tools</a></li>
+      <li><a href="/presentations/">Presentations</a></li>
+      <li><a href="/publications/" class="active">Publications</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="page-eyebrow">Research Output</div>
+    <h1 class="page-title">Publications</h1>
+    <p class="page-description">査読付き学術論文の一覧です。分子系統解析における進化モデルの拡張とその応用に関する研究を行っています。</p>
+  </header>
+
+  <!-- Content -->
+  <main class="content-section">
+    <!-- 学術雑誌（査読あり） -->
+    <section class="category">
+      <div class="category-header">
+        <h2 class="category-title">学術雑誌（査読あり）</h2>
+        <span class="category-count">2</span>
+      </div>
+      <table class="entries-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Details</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="entry-year">2021</td>
+            <td class="entry-content">
+              <div class="entry-title">P*R*O*P: a web application to perform phylogenetic analysis considering the effect of gaps</div>
+              <div class="entry-authors"><strong>T. Nishimaki</strong>, K. Sato</div>
+              <div class="entry-journal">BMC Bioinformatics 22, 36 (2021)</div>
+            </td>
+            <td class="entry-actions">
+              <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-03978-z" class="entry-link" target="_blank" rel="noopener">
+                View
+                <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="entry-year">2019</td>
+            <td class="entry-content">
+              <div class="entry-title">An Extension of the Kimura Two-Parameter Model to the Natural Evolutionary Process</div>
+              <div class="entry-authors"><strong>T. Nishimaki</strong>, K. Sato</div>
+              <div class="entry-journal">Journal of Molecular Evolution 87.1 (2019): 60-67</div>
+            </td>
+            <td class="entry-actions">
+              <a href="https://link.springer.com/article/10.1007/s00239-018-9885-1" class="entry-link" target="_blank" rel="noopener">
+                View
+                <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-copy">© 2025 Takuma Nishimaki</div>
+    <a href="#" class="footer-top">
+      <span>Go To Top</span>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentations - 西巻 拓真 / Takuma Nishimaki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #f7f7f5;
+      --color-surface: #ffffff;
+      --color-surface-alt: #f0f0ed;
+      --color-border: #e0e0dc;
+      --color-border-subtle: #eaeae6;
+      --color-text-primary: #1a1a1a;
+      --color-text-secondary: #5c5c5c;
+      --color-text-tertiary: #8a8a8a;
+      --color-accent: #2a2a2a;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'Noto Sans JP', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-text-primary);
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, var(--color-bg) 60%, transparent 100%);
+      transition: background 0.3s ease;
+    }
+
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-logo:hover {
+      color: var(--color-text-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-text-primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--color-text-primary);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Page Header */
+    .page-header {
+      padding: 10rem 3rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .page-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-description {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    /* Content Section */
+    .content-section {
+      padding: 0 3rem 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Category */
+    .category {
+      margin-bottom: 4rem;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .category-title {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .category-count {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-text-tertiary);
+      padding: 0.2rem 0.5rem;
+      background: var(--color-surface-alt);
+    }
+
+    /* Table */
+    .entries-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .entries-table thead {
+      display: none;
+    }
+
+    .entries-table tr {
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .entries-table td {
+      padding: 1rem 0;
+      vertical-align: top;
+    }
+
+    .entry-year {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--color-text-tertiary);
+      width: 80px;
+      padding-right: 1.5rem;
+    }
+
+    .entry-title {
+      font-size: 0.95rem;
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      padding-right: 2rem;
+    }
+
+    .entry-authors {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .entry-authors strong {
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+
+    .entry-venue {
+      font-size: 0.85rem;
+      color: var(--color-text-tertiary);
+      text-align: right;
+      min-width: 200px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem;
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-text-tertiary);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--color-text-tertiary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-top:hover {
+      color: var(--color-text-primary);
+    }
+
+    .footer-top svg {
+      transition: transform 0.3s ease;
+    }
+
+    .footer-top:hover svg {
+      transform: translateY(-3px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .page-header,
+      .content-section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .entries-table td {
+        display: block;
+        padding: 0;
+      }
+
+      .entries-table tr {
+        display: block;
+        padding: 1rem 0;
+      }
+
+      .entry-year {
+        width: auto;
+        margin-bottom: 0.25rem;
+      }
+
+      .entry-title {
+        padding-right: 0;
+      }
+
+      .entry-venue {
+        text-align: left;
+        margin-top: 0.5rem;
+      }
+
+      footer {
+        padding: 2rem 1.5rem;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="/" class="nav-logo">T. Nishimaki</a>
+    <ul class="nav-links">
+      <li><a href="/">Top</a></li>
+      <li><a href="/#tools">Tools</a></li>
+      <li><a href="/presentations/" class="active">Presentations</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="page-eyebrow">Academic Activities</div>
+    <h1 class="page-title">Presentations</h1>
+    <p class="page-description">学会発表・講演の一覧です。分子系統解析を中心に、国内外の学会で研究成果を発表しています。</p>
+  </header>
+
+  <!-- Content -->
+  <main class="content-section">
+    <!-- 講演 -->
+    <section class="category">
+      <div class="category-header">
+        <h2 class="category-title">講演</h2>
+        <span class="category-count">1</span>
+      </div>
+      <table class="entries-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Venue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="entry-year">2025</td>
+            <td class="entry-title">医学知識の無いデータサイエンティストがRWDを扱うという選択肢</td>
+            <td class="entry-venue">医学研究のデータはここが面白い！『データサイエンティストのためのこれからのキャリア戦略』, Webinar</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 国際学会 口頭発表 -->
+    <section class="category">
+      <div class="category-header">
+        <h2 class="category-title">国際学会 口頭発表</h2>
+        <span class="category-count">2</span>
+      </div>
+      <table class="entries-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Venue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="entry-year">2025</td>
+            <td class="entry-title">
+              Evaluation of molecular phylogenetic trees by an information-theoretic metric
+              <div class="entry-authors"><strong>T. Nishimaki</strong>, K. Sato</div>
+            </td>
+            <td class="entry-venue">Evolution 2025, Athens, GA</td>
+          </tr>
+          <tr>
+            <td class="entry-year">2019</td>
+            <td class="entry-title">
+              An extension of the Kimura two-parameter model for nucleotide sequences containing gaps
+              <div class="entry-authors"><strong>T. Nishimaki</strong>, K. Sato</div>
+            </td>
+            <td class="entry-venue">Biotech Asia Pacific Congress 2019, Kyoto</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 国際学会 ポスター発表 -->
+    <section class="category">
+      <div class="category-header">
+        <h2 class="category-title">国際学会 ポスター発表</h2>
+        <span class="category-count">2</span>
+      </div>
+      <table class="entries-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Venue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="entry-year">2020</td>
+            <td class="entry-title">
+              Development of a web application for phylogenetic analysis based on genetic difference considering the effect of gaps
+              <div class="entry-authors"><strong>T. Nishimaki</strong>, K. Sato</div>
+            </td>
+            <td class="entry-venue">QBIC Workshop 2020, Tokyo University of Science</td>
+          </tr>
+          <tr>
+            <td class="entry-year">2019</td>
+            <td class="entry-title">
+              An extension of the Kimura two-parameter model to evolutionary process including insertions and deletions
+              <div class="entry-authors"><strong>T. Nishimaki</strong>, K. Sato</div>
+            </td>
+            <td class="entry-venue">QBIC Workshop 2019, Tokyo University of Science</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 国内学会 口頭発表 -->
+    <section class="category">
+      <div class="category-header">
+        <h2 class="category-title">国内学会 口頭発表</h2>
+        <span class="category-count">4</span>
+      </div>
+      <table class="entries-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Venue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="entry-year">2015</td>
+            <td class="entry-title">
+              ギャップサイトを活用した新しい進化距離の尺度
+              <div class="entry-authors"><strong>西巻拓真</strong></div>
+            </td>
+            <td class="entry-venue">生命情報科学若手の会第7回研究会, 山形</td>
+          </tr>
+          <tr>
+            <td class="entry-year">2015</td>
+            <td class="entry-title">
+              塩基の挿入欠失を考慮した遺伝的差異の有用性
+              <div class="entry-authors"><strong>西巻拓真</strong>, 佐藤圭子</div>
+            </td>
+            <td class="entry-venue">日本遺伝学会第87回大会, 宮城</td>
+          </tr>
+          <tr>
+            <td class="entry-year">2014</td>
+            <td class="entry-title">
+              塩基の挿入欠失を含む進化モデルに基づく系統解析
+              <div class="entry-authors"><strong>西巻拓真</strong>, 佐藤圭子, 原利英</div>
+            </td>
+            <td class="entry-venue">第39回生命の起源および進化学会, 広島</td>
+          </tr>
+          <tr>
+            <td class="entry-year">2013</td>
+            <td class="entry-title">
+              Kimuraの2変数法の拡張
+              <div class="entry-authors"><strong>西巻拓真</strong>, 佐藤圭子, 原利英</div>
+            </td>
+            <td class="entry-venue">第38回生命の起源および進化学会, 福岡</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 国内学会 ポスター発表 -->
+    <section class="category">
+      <div class="category-header">
+        <h2 class="category-title">国内学会 ポスター発表</h2>
+        <span class="category-count">1</span>
+      </div>
+      <table class="entries-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Venue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="entry-year">2015</td>
+            <td class="entry-title">
+              塩基の挿入／欠失を考慮した遺伝的差異
+              <div class="entry-authors"><strong>西巻拓真</strong>, 佐藤圭子</div>
+            </td>
+            <td class="entry-venue">日本進化学会第17回大会, 東京</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-copy">© 2025 Takuma Nishimaki</div>
+    <a href="#" class="footer-top">
+      <span>Go To Top</span>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </footer>
+</body>
+</html>

@@ -13,6 +13,6 @@ export const menuItems = [
 export const socialLinks = [
   { icon: Github, href: 'https://github.com/t-24maki/', label: 'GitHub' },
   { icon: XLogo, href: 'https://x.com/t_nsmk', label: 'X' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/takuma-nishimaki-172539289/', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/nishimaki/', label: 'LinkedIn' },
   { icon: Youtube, href: 'https://www.youtube.com/@nishimaki/', label: 'YouTube' },
 ];

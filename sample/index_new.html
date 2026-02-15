@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>西巻 拓真 / Takuma Nishimaki - Data Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #f7f7f5;
+      --color-surface: #ffffff;
+      --color-surface-alt: #f0f0ed;
+      --color-border: #e0e0dc;
+      --color-border-subtle: #eaeae6;
+      --color-text-primary: #1a1a1a;
+      --color-text-secondary: #5c5c5c;
+      --color-text-tertiary: #8a8a8a;
+      --color-accent: #2a2a2a;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'Noto Sans JP', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-text-primary);
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, var(--color-bg) 60%, transparent 100%);
+      transition: background 0.3s ease;
+    }
+
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-text-primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-text-primary);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 3rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 50%;
+      height: 80%;
+      background: radial-gradient(ellipse at center, rgba(220,220,215,0.6) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-primary);
+    }
+
+    .hero-name-ja {
+      display: block;
+      font-size: 0.35em;
+      font-family: var(--font-body);
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--color-text-secondary);
+      margin-top: 0.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--color-text-secondary);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin-bottom: 3rem;
+      line-height: 1.9;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      border: 1px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-primary);
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-text-primary);
+      transform: translateX(-101%);
+      transition: transform 0.4s ease;
+    }
+
+    .btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn:hover {
+      border-color: var(--color-text-primary);
+    }
+
+    .btn:hover::before {
+      transform: translateX(0);
+    }
+
+    .btn:hover span {
+      color: var(--color-bg);
+    }
+
+    .btn-primary {
+      background: var(--color-text-primary);
+      color: var(--color-bg);
+      border-color: var(--color-text-primary);
+    }
+
+    .btn-primary::before {
+      background: var(--color-bg);
+    }
+
+    .btn-primary:hover {
+      border-color: var(--color-text-primary);
+    }
+
+    .btn-primary:hover span {
+      color: var(--color-text-primary);
+    }
+
+    .btn-arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Social Links Section */
+    .social-section {
+      padding: 6rem 3rem;
+      background: var(--color-surface);
+      position: relative;
+    }
+
+    .social-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 3rem;
+      right: 3rem;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--color-border), transparent);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-number {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-text-tertiary);
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .social-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border-subtle);
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--color-text-primary);
+      transition: height 0.4s ease;
+    }
+
+    .social-card:hover {
+      border-color: var(--color-border);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+
+    .social-card:hover::before {
+      height: 100%;
+    }
+
+    .social-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-border);
+      transition: all 0.3s ease;
+    }
+
+    .social-card:hover .social-icon {
+      background: var(--color-text-primary);
+      border-color: var(--color-text-primary);
+    }
+
+    .social-card:hover .social-icon svg {
+      fill: var(--color-surface);
+    }
+
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--color-text-secondary);
+      transition: fill 0.3s ease;
+    }
+
+    .social-platform {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+    }
+
+    .social-handle {
+      font-size: 0.8rem;
+      color: var(--color-text-tertiary);
+    }
+
+    .social-description {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .social-meta {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-text-tertiary);
+      letter-spacing: 0.05em;
+    }
+
+    /* Tools Section */
+    .tools-section {
+      padding: 8rem 3rem;
+      position: relative;
+    }
+
+    .tools-intro {
+      max-width: 600px;
+      margin-bottom: 4rem;
+    }
+
+    .tools-intro p {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .tool-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-subtle);
+      padding: 2.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.4s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tool-card:hover {
+      border-color: var(--color-border);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.06);
+    }
+
+    .tool-card-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-tertiary);
+    }
+
+    .tool-card-badge.coming-soon {
+      background: var(--color-surface-alt);
+    }
+
+    .tool-card-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-surface-alt);
+      margin-bottom: 1.5rem;
+    }
+
+    .tool-card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-text-secondary);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .tool-card-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.01em;
+    }
+
+    .tool-card-description {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .tool-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tool-tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--color-text-tertiary);
+      padding: 0.25rem 0.5rem;
+      background: var(--color-surface-alt);
+      letter-spacing: 0.05em;
+    }
+
+    .tool-card-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border-subtle);
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    .tool-card:hover .tool-card-cta {
+      color: var(--color-text-primary);
+    }
+
+    .tool-card-cta svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      transition: transform 0.3s ease;
+    }
+
+    .tool-card:hover .tool-card-cta svg {
+      transform: translateX(4px);
+    }
+
+    /* Placeholder for coming soon */
+    .tool-card.placeholder {
+      background: var(--color-surface-alt);
+      border-style: dashed;
+    }
+
+    .tool-card.placeholder:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Services Section */
+    .services-section {
+      padding: 8rem 3rem;
+      background: var(--color-surface);
+      position: relative;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .service-card {
+      padding: 2.5rem;
+      border: 1px solid var(--color-border-subtle);
+      background: var(--color-bg);
+      position: relative;
+    }
+
+    .service-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 400;
+      color: var(--color-border);
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      line-height: 1;
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .service-description {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .service-list {
+      list-style: none;
+    }
+
+    .service-list li {
+      font-size: 0.85rem;
+      color: var(--color-text-tertiary);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--color-border-subtle);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .service-list li::before {
+      content: '—';
+      color: var(--color-text-tertiary);
+    }
+
+    /* Skills Section */
+    .skills-section {
+      padding: 6rem 3rem;
+      background: var(--color-bg);
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .skill-category h3 {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      padding: 0.4rem 0.8rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--color-border);
+      color: var(--color-text-primary);
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 8rem 3rem;
+      background: var(--color-surface);
+      text-align: center;
+      position: relative;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--color-border));
+    }
+
+    .contact-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-text {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      max-width: 500px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem;
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-text-tertiary);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--color-text-tertiary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-top:hover {
+      color: var(--color-text-primary);
+    }
+
+    .footer-top svg {
+      transition: transform 0.3s ease;
+    }
+
+    .footer-top:hover svg {
+      transform: translateY(-3px);
+    }
+
+    /* Coming Soon Social Card */
+    .social-card.coming-soon-card {
+      background: var(--color-surface-alt);
+      border-style: dashed;
+      cursor: default;
+    }
+
+    .social-card.coming-soon-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .social-card.coming-soon-card::before {
+      display: none;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content > * {
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .hero-eyebrow { animation-delay: 0.1s; }
+    .hero-name { animation-delay: 0.2s; }
+    .hero-title { animation-delay: 0.3s; }
+    .hero-description { animation-delay: 0.4s; }
+    .hero-cta { animation-delay: 0.5s; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero, .services-section, .contact-section, .tools-section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .social-section, .skills-section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 2rem 1.5rem;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-logo">T. Nishimaki</div>
+    <ul class="nav-links">
+      <li><a href="#">Top</a></li>
+      <li><a href="/tools/">Tools</a></li>
+      <li><a href="/presentations/">Presentations</a></li>
+      <li><a href="/publications/">Publications</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Available for Freelance Work</div>
+      <h1 class="hero-name">
+        Takuma Nishimaki
+        <span class="hero-name-ja">西巻 拓真</span>
+      </h1>
+      <p class="hero-title">Data Scientist — Freelance</p>
+      <p class="hero-description">
+        データ利活用アドバイザリーと教育研修を提供するフリーランスのデータサイエンティストです。10年以上の実務経験を活かし、経営課題の解決から人材育成まで、データドリブンな意思決定を支援します。
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">
+          <span>お仕事のご相談</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#services" class="btn">
+          <span>サービス詳細</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Links Section -->
+  <section class="social-section">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Connect & Follow</h2>
+    </div>
+    <div class="social-grid">
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@nishimaki/" class="social-card" target="_blank" rel="noopener">
+        <div class="social-card-header">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="social-platform">YouTube</div>
+            <div class="social-handle">@nishimaki</div>
+          </div>
+        </div>
+        <p class="social-description">データサイエンス教育コンテンツを配信。初学者から実務者まで、統計・機械学習の本質を分かりやすく解説。</p>
+        <div class="social-meta">Educational Videos</div>
+      </a>
+
+      <!-- note -->
+      <a href="#" class="social-card coming-soon-card">
+        <div class="social-card-header">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="social-platform">note</div>
+            <div class="social-handle">Coming Soon</div>
+          </div>
+        </div>
+        <p class="social-description">データサイエンスの実務知見や統計コミュニケーションについて、より深い考察を記事として発信予定。</p>
+        <div class="social-meta">Long-form Articles</div>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/nishimaki/" class="social-card" target="_blank" rel="noopener">
+        <div class="social-card-header">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="social-platform">LinkedIn</div>
+            <div class="social-handle">@nishimaki</div>
+          </div>
+        </div>
+        <p class="social-description">統計コミュニケーションや実務的なデータサイエンスの知見を発信。ビジネスパーソン向けのカルーセル投稿を定期更新。</p>
+        <div class="social-meta">Articles & Insights</div>
+      </a>
+
+      <!-- X (Twitter) -->
+      <a href="https://x.com/t_nsmk" class="social-card" target="_blank" rel="noopener">
+        <div class="social-card-header">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="social-platform">X (Twitter)</div>
+            <div class="social-handle">@t_nsmk</div>
+          </div>
+        </div>
+        <p class="social-description">日々の気づきや技術トピックを気軽に発信。イベント参加レポートや業界ニュースへの所感なども。</p>
+        <div class="social-meta">Daily Updates</div>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/t-24maki/" class="social-card" target="_blank" rel="noopener">
+        <div class="social-card-header">
+          <div class="social-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+          </div>
+          <div>
+            <div class="social-platform">GitHub</div>
+            <div class="social-handle">@t-24maki</div>
+          </div>
+        </div>
+        <p class="social-description">オープンソースプロジェクトやサンプルコードを公開。分析ツール、Webアプリケーションなどを開発・管理。</p>
+        <div class="social-meta">Code & Projects</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-number">01</span>
+        <h3 class="service-title">データ利活用アドバイザリー</h3>
+        <p class="service-description">経営課題解決に向けたデータ利活用の推進と全体設計。要件定義から効果測定まで、継続的な分析・業務設計を伴走します。</p>
+        <ul class="service-list">
+          <li>データ利活用戦略の策定</li>
+          <li>分析アルゴリズム設計</li>
+          <li>RWD利活用による価値創出</li>
+          <li>意思決定支援</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-number">02</span>
+        <h3 class="service-title">データサイエンス教育／研修</h3>
+        <p class="service-description">企業・大学向けの教育企画、カリキュラム設計、教材開発、講義、フォロー。即戦力となる人材を育成します。</p>
+        <ul class="service-list">
+          <li>カスタムカリキュラム設計</li>
+          <li>ハンズオン研修</li>
+          <li>教材・コンテンツ開発</li>
+          <li>継続的なフォローアップ</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section" id="skills">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Technical Stack</h2>
+    </div>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>AI・データ分析</h3>
+        <div class="skill-list">
+          <span class="skill-tag">統計解析</span>
+          <span class="skill-tag">ベイズ推定</span>
+          <span class="skill-tag">因果推論</span>
+          <span class="skill-tag">機械学習</span>
+          <span class="skill-tag">数理最適化</span>
+          <span class="skill-tag">自然言語処理</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>開発言語</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">R</span>
+          <span class="skill-tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>ツール・環境</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Git</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>ライブラリ</h3>
+        <div class="skill-list">
+          <span class="skill-tag">pandas</span>
+          <span class="skill-tag">scikit-learn</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">tidyverse</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <h2 class="contact-heading">Let's Work Together</h2>
+    <p class="contact-text">
+      データ利活用のご相談、研修のご依頼など、お気軽にお問い合わせください。
+    </p>
+    <a href="/contact/" class="btn btn-primary">
+      <span>お問い合わせ</span>
+      <span class="btn-arrow">→</span>
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-copy">© 2025 Takuma Nishimaki</div>
+    <a href="#" class="footer-top">
+      <span>Go To Top</span>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </footer>
+</body>
+</html>

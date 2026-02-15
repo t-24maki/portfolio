@@ -21,62 +21,102 @@ export default function WebContents() {
         <meta name="twitter:description" content="データサイエンス・AI関連のWeb配信コンテンツ一覧です。" />
       </Head>
 
-      <div className="space-y-8">
-        <h2 className="text-4xl mb-6 text-gray-800">Web Contents</h2>
-        <div className="space-y-6">
-          <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-            <div className="flex flex-col lg:flex-row gap-6">
-              <div className="w-full lg:w-2/5">
-                <div className="h-48 flex items-center justify-center rounded-lg relative">
+      <div style={{ padding: '8rem 3rem', maxWidth: '1200px', margin: '0 auto' }}>
+        <div className="section-header">
+          <span className="section-number">01</span>
+          <h2 className="section-title">Web Contents</h2>
+        </div>
+
+        <div style={{ marginTop: '4rem', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+          <div className="content-card">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <div style={{ width: '100%', maxWidth: '400px' }}>
+                <div style={{ 
+                  width: '100%', 
+                  paddingTop: '75%', 
+                  position: 'relative',
+                  background: 'var(--color-surface-alt)',
+                  border: '1px solid var(--color-border-subtle)',
+                }}>
                   <Image 
                     src="/images/ds-youtube.jpg"
                     alt="データサイエンス塾!!"
                     fill
-                    className="object-contain rounded-lg"
+                    style={{ objectFit: 'contain' }}
                   />
                 </div>
               </div>
-              <div className="w-full lg:w-3/5">
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">データサイエンス塾!!</h3>
-                <p className="text-gray-600 mb-4">
+              <div style={{ flex: 1 }}>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.3rem',
+                  fontWeight: 400,
+                  marginBottom: '1rem',
+                  letterSpacing: '0.01em',
+                }}>データサイエンス塾!!</h3>
+                <p style={{
+                  fontSize: '0.9rem',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.7,
+                  marginBottom: '1.5rem',
+                }}>
                   データ分析や人工知能(AI)開発の基本を無料で学べるYouTubeチャンネルです。ExcelやPythonによる実践を重視しています。
                 </p>
                 <a
                   href="https://www.youtube.com/@nishimaki"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-offset-2 transition-shadow"
+                  className="btn"
                 >
-                  View Site
+                  <span>View Site</span>
+                  <span className="btn-arrow">→</span>
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="bg-white p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-            <div className="flex flex-col lg:flex-row gap-6">
-              <div className="w-full lg:w-2/5">
-                <div className="h-48 flex items-center justify-center rounded-lg relative">
+          <div className="content-card">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <div style={{ width: '100%', maxWidth: '400px' }}>
+                <div style={{ 
+                  width: '100%', 
+                  paddingTop: '75%', 
+                  position: 'relative',
+                  background: 'var(--color-surface-alt)',
+                  border: '1px solid var(--color-border-subtle)',
+                }}>
                   <Image 
                     src="/images/ds-site.jpg"
                     alt="データサイエンス塾"
                     fill
-                    className="object-contain rounded-lg"
+                    style={{ objectFit: 'contain' }}
                   />
                 </div>
               </div>
-              <div className="w-full lg:w-3/5">
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">データサイエンス塾</h3>
-                <p className="text-gray-600 mb-4">
+              <div style={{ flex: 1 }}>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.3rem',
+                  fontWeight: 400,
+                  marginBottom: '1rem',
+                  letterSpacing: '0.01em',
+                }}>データサイエンス塾</h3>
+                <p style={{
+                  fontSize: '0.9rem',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.7,
+                  marginBottom: '1.5rem',
+                }}>
                   YouTubeチャンネル「データサイエンス塾!!」と連動したデータサイエンス・統計学などの無料講座、ブラウザ上で動作する計算ツールなどを公開しているWebサイトです。
                 </p>
                 <a
                   href="https://analysis-navi.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-offset-2 transition-shadow"
+                  className="btn"
                 >
-                  View Site
+                  <span>View Site</span>
+                  <span className="btn-arrow">→</span>
                 </a>
               </div>
             </div>
