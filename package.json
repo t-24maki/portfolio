@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "katex": "^0.16.28",
     "lucide-react": "latest",
     "next": "latest",
     "react": "latest",

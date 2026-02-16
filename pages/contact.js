@@ -34,12 +34,12 @@ export default function Contact() {
         <main className="content-section">
           <div className="contact-card">
             <div className="contact-label">Email</div>
-            <a href="mailto:contact@tnishimaki.com" className="contact-email">
+            <a href="mailto:takuma.nishimaki@gmail.com" className="contact-email">
               <svg viewBox="0 0 24 24">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M22 6l-10 7L2 6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              contact@tnishimaki.com
+              takuma.nishimaki@gmail.com
             </a>
           </div>
 
@@ -54,9 +54,8 @@ export default function Contact() {
               </a>
               {/* note */}
               <a href="#" className="social-link" aria-label="note">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 19V9.5C4 6.46 6.46 4 9.5 4c3.04 0 5.5 2.46 5.5 5.5V19h-3V9.5C12 8.12 10.88 7 9.5 7S7 8.12 7 9.5V19H4z"/>
-                </svg>
+              <svg fill="#000000" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Note</title><path d="M0 .279c4.623 0 10.953-.235 15.498-.117 6.099.156 8.39 2.813 8.468 9.374.077 3.71 0 14.335 0 14.335h-6.598c0-9.296.04-10.83 0-13.759-.078-2.578-.814-3.807-2.795-4.041-2.097-.235-7.975-.04-7.975-.04v17.84H0Z"/>
+              </svg>
               </a>
               {/* LinkedIn */}
               <a href="https://www.linkedin.com/in/nishimaki/" className="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">

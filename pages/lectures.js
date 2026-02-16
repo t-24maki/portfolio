@@ -33,14 +33,12 @@ export default function Lectures() {
           {/* オンライン教材 */}
           <section className="category">
             <div className="category-header">
-              <h2 className="category-title">オンライン教材</h2>
+              <h2 className="category-title">Udemy講座</h2>
               <span className="category-count">1</span>
             </div>
             <div className="lectures-grid">
               <a href="https://www.udemy.com/course/excel_data/?referralCode=1E852BD09A70231F82FD" className="lecture-card" target="_blank" rel="noopener">
-                <span className="lecture-card-badge">Udemy</span>
                 <h3 className="lecture-card-title">【すぐ実践できる！】Excelデータ分析/統計解析 超入門コース【3時間速習】</h3>
-                <p className="lecture-card-org">Udemy</p>
                 <p className="lecture-card-description">マーケティング担当者、営業・経営企画担当者、業務改善を目指す方向けに、Excelを使ったデータ分析の基本を3時間で学べるコースです。</p>
                 <div className="lecture-card-meta">
                   <span className="lecture-tag">Excel</span>
