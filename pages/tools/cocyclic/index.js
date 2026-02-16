@@ -212,26 +212,7 @@ export default function CocyclicGame() {
 
         <main className="content-section">
           <div className="cocyclic-wrapper" ref={containerRef}>
-            {/* Controls */}
-            <div className="cocyclic-controls">
-              <span className="cocyclic-stone-count">置いた石の数: {stoneCount}</span>
-              <div className="cocyclic-buttons">
-                <button onClick={undoMove} disabled={history.length === 0} className="cocyclic-btn cocyclic-btn-secondary">
-                  戻す
-                </button>
-                <button onClick={resetGame} className="cocyclic-btn cocyclic-btn-primary">
-                  リセット
-                </button>
-              </div>
-            </div>
-
-            {/* Message */}
-            {gameOver && (
-              <div className="cocyclic-message">
-                共円！（赤枠の4つの石が同一円周上または一直線上にあります）
-              </div>
-            )}
-
+            <div className="cocyclic-main">
             {/* Board */}
             <div className="cocyclic-board" style={{ padding: boardPadding, position: 'relative', display: 'inline-block' }}>
               <div
@@ -329,6 +310,23 @@ export default function CocyclicGame() {
                   )
                 )}
               </svg>
+            </div>
+
+            {/* Controls (right side) */}
+            <div className="cocyclic-controls">
+              <span className="cocyclic-stone-count">置いた石の数: {stoneCount}</span>
+              <button onClick={undoMove} disabled={history.length === 0} className="cocyclic-btn cocyclic-btn-secondary">
+                一手戻す
+              </button>
+              <button onClick={resetGame} className="cocyclic-btn cocyclic-btn-primary">
+                リセット
+              </button>
+              {gameOver && (
+                <div className="cocyclic-message">
+                  共円！（赤枠の4つの石が同一円周上または一直線上にあります）
+                </div>
+              )}
+            </div>
             </div>
 
             {/* Note */}

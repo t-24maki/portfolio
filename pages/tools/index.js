@@ -36,9 +36,15 @@ export default function Tools() {
             <Link href="/tools/sample-size/" className="tool-card">
               <span className="tool-card-badge">Live</span>
               <div className="tool-card-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 7H7v2h2V7zm0 4H7v2h2v-2zm0 4H7v2h2v-2zm4-8h-2v2h2V7zm0 4h-2v2h2v-2zm0 4h-2v2h2v-2zm4-8h-2v2h2V7zm0 4h-2v2h2v-2zm0 4h-2v2h2v-2z"/>
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="4" y="2" width="16" height="20" rx="2"/>
+                  <line x1="8" y1="6" x2="16" y2="6"/>
+                  <line x1="8" y1="10" x2="10" y2="10"/>
+                  <line x1="12" y1="10" x2="16" y2="10"/>
+                  <line x1="8" y1="14" x2="10" y2="14"/>
+                  <line x1="12" y1="14" x2="16" y2="14"/>
+                  <line x1="8" y1="18" x2="10" y2="18"/>
+                  <line x1="12" y1="18" x2="16" y2="18"/>
                 </svg>
               </div>
               <h3 className="tool-card-title">Sample Size Calculator</h3>
@@ -57,9 +63,12 @@ export default function Tools() {
             <Link href="/tools/ab-test/" className="tool-card">
               <span className="tool-card-badge">Live</span>
               <div className="tool-card-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 6h7v2H4zm0 4h7v2H4zm0 4h7v2H4zm9-8h7v2h-7zm0 4h7v2h-7zm0 4h7v2h-7z"/>
-                  <path d="M2 4v16h20V4H2zm18 14H4V6h16v12z"/>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="4" width="8" height="16" rx="1"/>
+                  <rect x="14" y="4" width="8" height="16" rx="1"/>
+                  <line x1="6" y1="10" x2="6" y2="16"/>
+                  <line x1="18" y1="10" x2="18" y2="16"/>
+                  <line x1="4" y1="13" x2="8" y2="13"/>
                 </svg>
               </div>
               <h3 className="tool-card-title">A/B Test Calculator</h3>
@@ -84,7 +93,7 @@ export default function Tools() {
                 </svg>
               </div>
               <h3 className="tool-card-title">Normal Distribution Graph Maker</h3>
-              <p className="tool-card-description">任意の正規分布曲線を作成し、背景透過PNG画像としてダウンロードできるフリー素材ツール。</p>
+              <p className="tool-card-description">任意の正規分布曲線を作成し、背景透過PNG画像としてダウンロードできるフリー素材ツールです。</p>
               <div className="tool-card-tags">
                 <span className="tool-tag">Visualization</span>
                 <span className="tool-tag">Statistics</span>
@@ -101,14 +110,14 @@ export default function Tools() {
               <div className="tool-card-icon">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-                  <circle cx="8" cy="7" r="2" fill="currentColor"/>
-                  <circle cx="17" cy="10" r="2" fill="currentColor"/>
-                  <circle cx="15" cy="18" r="2" fill="currentColor"/>
-                  <circle cx="6" cy="15" r="2" fill="currentColor"/>
+                  <circle cx="12" cy="3" r="1.8" fill="currentColor"/>
+                  <circle cx="21" cy="12" r="1.8" fill="currentColor"/>
+                  <circle cx="12" cy="21" r="1.8" fill="currentColor"/>
+                  <circle cx="3" cy="12" r="1.8" fill="currentColor"/>
                 </svg>
               </div>
-              <h3 className="tool-card-title">Cocyclic</h3>
-              <p className="tool-card-description">碁盤上に石を置いて、4つの石が同一円周上に並ばないようにする理系パズルゲーム。</p>
+              <h3 className="tool-card-title">共円</h3>
+              <p className="tool-card-description">碁盤上に石を置いて、4つの石が同一円周上に並ばないようにするパズルゲームです。</p>
               <div className="tool-card-tags">
                 <span className="tool-tag">Puzzle</span>
                 <span className="tool-tag">Geometry</span>

@@ -1886,14 +1886,21 @@ nav {
   margin-bottom: 4rem;
 }
 
+.cocyclic-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
 .cocyclic-controls {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  padding: 1rem 1.5rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
   background: var(--color-surface);
   border: 1px solid var(--color-border-subtle);
+  width: 300px;
+  flex-shrink: 0;
 }
 
 .cocyclic-stone-count {
@@ -1901,14 +1908,11 @@ nav {
   font-size: 0.85rem;
   color: var(--color-text-primary);
   letter-spacing: 0.02em;
-}
-
-.cocyclic-buttons {
-  display: flex;
-  gap: 0.5rem;
+  white-space: nowrap;
 }
 
 .cocyclic-btn {
+  width: 100%;
   padding: 0.5rem 1.25rem;
   font-family: var(--font-body);
   font-size: 0.8rem;
@@ -1946,14 +1950,16 @@ nav {
 }
 
 .cocyclic-message {
-  margin-bottom: 1rem;
+  margin-top: 0.25rem;
   padding: 0.75rem 1rem;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: #c0392b;
   background: #fdf2f2;
   border: 1px solid #f5c6cb;
-  text-align: center;
+  text-align: left;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 .cocyclic-board {
@@ -2023,10 +2029,22 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .cocyclic-controls {
+  .cocyclic-main {
     flex-direction: column;
-    gap: 0.75rem;
-    text-align: center;
+  }
+
+  .cocyclic-controls {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .cocyclic-btn {
+    width: auto;
+  }
+
+  .cocyclic-stone-count {
+    flex: 1;
   }
 
   .cocyclic-board {
