@@ -12,8 +12,9 @@ export default function Publications() {
         <meta property="og:title" content="西巻 拓真 / Takuma Nishimaki [Publications]" />
         <meta property="og:description" content="論文発表、学会発表などの研究業績一覧です。" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/publications" />
-        
+        <meta property="og:url" content="https://tnishimaki.com/publications/" />
+        <link rel="canonical" href="https://tnishimaki.com/publications/" />
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="西巻 拓真 / Takuma Nishimaki [Publications]" />

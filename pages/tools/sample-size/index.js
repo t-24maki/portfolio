@@ -88,10 +88,12 @@ export default function SampleSizeCalculator() {
         <meta property="og:description" content="アンケート調査に必要なサンプルサイズを統計学的に算出するツール。" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tnishimaki.com/tools/sample-size/" />
+        <link rel="canonical" href="https://tnishimaki.com/tools/sample-size/" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Sample Size Calculator - 西巻 拓真 / Takuma Nishimaki" />
         <meta name="twitter:description" content="アンケート調査に必要なサンプルサイズを統計学的に算出するツール。" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://tnishimaki.com/tools/" }, { "@type": "ListItem", "position": 3, "name": "Sample Size Calculator" }] }) }} />
       </Head>
 
       <div>

@@ -160,10 +160,12 @@ export default function NormalDistributionGraphMaker() {
         <meta property="og:description" content="任意の正規分布（ガウス分布）の曲線を作成し、背景透過画像(PNG)をダウンロードできるフリーツール。" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tnishimaki.com/tools/normal-distribution/" />
+        <link rel="canonical" href="https://tnishimaki.com/tools/normal-distribution/" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Normal Distribution Graph Maker - 西巻 拓真 / Takuma Nishimaki" />
         <meta name="twitter:description" content="任意の正規分布（ガウス分布）の曲線を作成し、背景透過画像(PNG)をダウンロードできるフリーツール。" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://tnishimaki.com/tools/" }, { "@type": "ListItem", "position": 3, "name": "Normal Distribution Graph Maker" }] }) }} />
       </Head>
 
       <div>

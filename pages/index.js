@@ -16,7 +16,8 @@ const schemaData = {
     "https://github.com/t-24maki/",
     "https://x.com/t_nsmk",
     "https://www.linkedin.com/in/takuma-nishimaki-172539289/",
-    "https://www.youtube.com/@nishimaki/"
+    "https://www.youtube.com/@nishimaki/",
+    "https://note.com/tnishimaki"
   ],
   "knowsAbout": [
     "データサイエンス",
@@ -40,14 +41,14 @@ export default function Home() {
       <Head>
         <title>西巻 拓真 / Takuma Nishimaki</title>
         <meta name="description" content="企業のデータ利活用支援や研修講師を行うデータサイエンティストです。" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
+
         {/* OGP Tags */}
         <meta property="og:title" content="西巻 拓真 / Takuma Nishimaki" />
         <meta property="og:description" content="企業のデータ利活用支援や研修講師を行うデータサイエンティストです。" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com" />
-        
+        <meta property="og:url" content="https://tnishimaki.com/" />
+        <link rel="canonical" href="https://tnishimaki.com/" />
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="西巻 拓真 / Takuma Nishimaki" />
@@ -156,7 +157,7 @@ export default function Home() {
               <div className="social-meta">Educational Videos</div>
             </a>
 
-            <a href="#" className="social-card coming-soon-card">
+            <a href="https://note.com/tnishimaki" className="social-card" target="_blank" rel="noopener">
               <div className="social-card-header">
                 <div className="social-icon">
                 <svg fill="#000000" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Note</title><path d="M0 .279c4.623 0 10.953-.235 15.498-.117 6.099.156 8.39 2.813 8.468 9.374.077 3.71 0 14.335 0 14.335h-6.598c0-9.296.04-10.83 0-13.759-.078-2.578-.814-3.807-2.795-4.041-2.097-.235-7.975-.04-7.975-.04v17.84H0Z"/>
@@ -164,10 +165,10 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="social-platform">note</div>
-                  <div className="social-handle">Coming Soon</div>
+                  <div className="social-handle">@tnishimaki</div>
                 </div>
               </div>
-              <p className="social-description">データサイエンスの基本や実践ノウハウについて、より深い考察を記事として発信予定。</p>
+              <p className="social-description">データサイエンスの基本や実践ノウハウについて、より深い考察を記事として発信しています。</p>
               <div className="social-meta">Long-form Articles</div>
             </a>
 

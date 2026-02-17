@@ -14,8 +14,9 @@ export default function Products() {
         <meta property="og:title" content="西巻 拓真 / Takuma Nishimaki [Products]" />
         <meta property="og:description" content="開発・リリースしたプロダクト一覧です。" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/products" />
-        
+        <meta property="og:url" content="https://tnishimaki.com/products/" />
+        <link rel="canonical" href="https://tnishimaki.com/products/" />
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="西巻 拓真 / Takuma Nishimaki [Products]" />

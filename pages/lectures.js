@@ -12,8 +12,9 @@ export default function Lectures() {
         <meta property="og:title" content="Lectures - 西巻 拓真 / Takuma Nishimaki" />
         <meta property="og:description" content="企業・大学向けの研修講師、オンライン教材の制作など、データサイエンス教育に関する活動実績です。" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/lectures" />
-        
+        <meta property="og:url" content="https://tnishimaki.com/lectures/" />
+        <link rel="canonical" href="https://tnishimaki.com/lectures/" />
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Lectures - 西巻 拓真 / Takuma Nishimaki" />

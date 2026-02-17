@@ -13,8 +13,9 @@ export default function WebContents() {
         <meta property="og:title" content="西巻 拓真 / Takuma Nishimaki [Web Contents]" />
         <meta property="og:description" content="データサイエンス・AI関連のWeb配信コンテンツ一覧です。" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/web-contents" />
-        
+        <meta property="og:url" content="https://tnishimaki.com/web-contents/" />
+        <link rel="canonical" href="https://tnishimaki.com/web-contents/" />
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="西巻 拓真 / Takuma Nishimaki [Web Contents]" />

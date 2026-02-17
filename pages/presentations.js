@@ -12,8 +12,9 @@ export default function Presentations() {
         <meta property="og:title" content="西巻 拓真 / Takuma Nishimaki [Presentations]" />
         <meta property="og:description" content="基調講演、学会発表、研究発表などの一覧です。" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/presentations" />
-        
+        <meta property="og:url" content="https://tnishimaki.com/presentations/" />
+        <link rel="canonical" href="https://tnishimaki.com/presentations/" />
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="西巻 拓真 / Takuma Nishimaki [Presentations]" />

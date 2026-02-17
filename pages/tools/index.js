@@ -7,18 +7,19 @@ export default function Tools() {
     <>
       <Head>
         <title>Tools - 西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="データ分析や統計学習に役立つものから、ちょっとしたお遊びまで。すべて無料でご利用いただけるシンプルなWebツール集です。" />
+        <meta name="description" content="データ分析や統計学習に役立つものから、ちょっとしたお遊びまで。すべて無料でご利用いただけるシンプルなWebアプリ集です。" />
         
         {/* OGP Tags */}
         <meta property="og:title" content="Tools - 西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="データ分析や統計学習に役立つものから、ちょっとしたお遊びまで。すべて無料でご利用いただけるシンプルなWebツール集です。" />
+        <meta property="og:description" content="データ分析や統計学習に役立つものから、ちょっとしたお遊びまで。すべて無料でご利用いただけるシンプルなWebアプリ集です。" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/tools" />
-        
+        <meta property="og:url" content="https://tnishimaki.com/tools/" />
+        <link rel="canonical" href="https://tnishimaki.com/tools/" />
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Tools - 西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="データ分析や統計学習に役立つものから、ちょっとしたお遊びまで。すべて無料でご利用いただけるシンプルなWebツール集です。" />
+        <meta name="twitter:description" content="データ分析や統計学習に役立つものから、ちょっとしたお遊びまで。すべて無料でご利用いただけるシンプルなWebアプリ集です。" />
       </Head>
 
       <div>

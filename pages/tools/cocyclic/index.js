@@ -189,9 +189,11 @@ export default function CocyclicGame() {
         <meta property="og:description" content="碁盤上に石を置いて、4つの石が同一円周上に並ばないようにするパズルゲーム「共円」。" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tnishimaki.com/tools/cocyclic/" />
+        <link rel="canonical" href="https://tnishimaki.com/tools/cocyclic/" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Cocyclic - 西巻 拓真 / Takuma Nishimaki" />
         <meta name="twitter:description" content="碁盤上に石を置いて、4つの石が同一円周上に並ばないようにするパズルゲーム「共円」。" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://tnishimaki.com/tools/" }, { "@type": "ListItem", "position": 3, "name": "共円 (Cocyclic)" }] }) }} />
       </Head>
 
       <div>

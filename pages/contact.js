@@ -12,8 +12,9 @@ export default function Contact() {
         <meta property="og:title" content="Contact - 西巻 拓真 / Takuma Nishimaki" />
         <meta property="og:description" content="データ利活用のご相談、研修のご依頼など、お気軽にお問い合わせください。" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/contact" />
-        
+        <meta property="og:url" content="https://tnishimaki.com/contact/" />
+        <link rel="canonical" href="https://tnishimaki.com/contact/" />
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Contact - 西巻 拓真 / Takuma Nishimaki" />
@@ -53,7 +54,7 @@ export default function Contact() {
                 </svg>
               </a>
               {/* note */}
-              <a href="#" className="social-link" aria-label="note">
+              <a href="https://note.com/tnishimaki" className="social-link" target="_blank" rel="noopener" aria-label="note">
               <svg fill="#000000" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Note</title><path d="M0 .279c4.623 0 10.953-.235 15.498-.117 6.099.156 8.39 2.813 8.468 9.374.077 3.71 0 14.335 0 14.335h-6.598c0-9.296.04-10.83 0-13.759-.078-2.578-.814-3.807-2.795-4.041-2.097-.235-7.975-.04-7.975-.04v17.84H0Z"/>
               </svg>
               </a>
