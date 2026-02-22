@@ -26,7 +26,7 @@ export default function Publications() {
         <header className="page-header">
           <div className="page-eyebrow">Research Output</div>
           <h1 className="page-title">Publications</h1>
-          <p className="page-description">査読付き学術論文の一覧です。分子系統解析における進化モデルの拡張とその応用に関する研究を行っています。</p>
+          <p className="page-description">査読付き学術論文の一覧です。主に分子系統解析に関する研究を行っています。</p>
         </header>
 
         {/* Content */}

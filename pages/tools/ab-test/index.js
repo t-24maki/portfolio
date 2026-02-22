@@ -275,9 +275,7 @@ export default function ABTestCalculator() {
                 計算
               </button>
 
-              {error && (
-                <p className="calc-error">{error}</p>
-              )}
+              <p className="calc-error" style={{ visibility: error ? 'visible' : 'hidden' }}>{error || '\u00A0'}</p>
             </div>
 
             {/* Result */}

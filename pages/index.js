@@ -103,7 +103,7 @@ export default function Home() {
               marginBottom: '3rem',
               lineHeight: 1.9,
             }}>
-              データ利活用のご支援と教育研修業を請け負うデータサイエンティストです。10年以上の実務経験を活かし、データドリブンな意思決定や人材育成を支援します。
+              データ利活用ご支援と教育業を請け負うデータサイエンティストです。10年以上の実務経験を活かし、データドリブンな意思決定や人材育成を支援します。
             </p>
             <div className="hero-cta" style={{
               display: 'flex',

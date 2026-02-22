@@ -65,7 +65,7 @@ export default function Lectures() {
                 <tr>
                   <td className="entry-year">2026</td>
                   <td className="entry-content">
-                    <div className="entry-title">Excel＋XLSTATで始めるデータ分析（基本統計シリーズ）</div>
+                    <div className="entry-title">Excel＋XLSTATで始めるデータ分析（基本統計シリーズ）【全3回】</div>
                     <div className="entry-org">ユサコ株式会社</div>
                   </td>
                   <td className="entry-actions">

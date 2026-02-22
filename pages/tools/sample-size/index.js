@@ -218,9 +218,7 @@ export default function SampleSizeCalculator() {
                 計算
               </button>
 
-              {message && (
-                <p className="calc-error">{message}</p>
-              )}
+              <p className="calc-error" style={{ visibility: message ? 'visible' : 'hidden' }}>{message || '\u00A0'}</p>
             </div>
 
             {/* Result */}

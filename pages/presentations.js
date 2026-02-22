@@ -26,7 +26,7 @@ export default function Presentations() {
         <header className="page-header">
           <div className="page-eyebrow">Academic Activities</div>
           <h1 className="page-title">Presentations</h1>
-          <p className="page-description">学会発表・講演の一覧です。分子系統解析を中心に、国内外の学会で研究成果を発表しています。</p>
+          <p className="page-description">国内外のセミナーや学会における講演・学会発表の実績です。</p>
         </header>
 
         {/* Content */}
