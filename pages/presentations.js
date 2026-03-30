@@ -129,7 +129,7 @@ export default function Presentations() {
           <section className="category">
             <div className="category-header">
               <h2 className="category-title">国内学会 口頭発表</h2>
-              <span className="category-count">4</span>
+              <span className="category-count">5</span>
             </div>
             <table className="entries-table">
               <thead>
@@ -140,6 +140,14 @@ export default function Presentations() {
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td className="entry-year">2026</td>
+                  <td className="entry-title">
+                    情報理論に基づく分子系統解析手法の評価
+                    <div className="entry-authors"><strong>西巻 拓真</strong>, 佐藤 圭子</div>
+                  </td>
+                  <td className="entry-venue">情報処理学会 第84回BIO合同研究発表会, 石川</td>
+                </tr>
                 <tr>
                   <td className="entry-year">2015</td>
                   <td className="entry-title">

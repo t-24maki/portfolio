@@ -140,7 +140,7 @@ export default function Layout({ children }) {
           color: 'var(--color-text-tertiary)',
           letterSpacing: '0.1em',
         }}>
-          © 2025 Takuma Nishimaki
+          © Takuma Nishimaki
         </div>
         <a href="#" className="footer-top" style={{
           display: 'flex',

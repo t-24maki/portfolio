@@ -21,9 +21,10 @@ const schemaData = {
   ],
   "knowsAbout": [
     "データサイエンス",
+    "データサイエンティスト",
     "フリーランス",
     "機械学習",
-    "統計解析",
+    "統計学",
     "分子系統学",
     "Python",
     "Excel"
@@ -40,11 +41,11 @@ export default function Home() {
     <>
       <Head>
         <title>西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="企業のデータ利活用支援や研修講師を行うデータサイエンティストです。" />
+        <meta name="description" content="データ利活用支援や研修講師を行う独立統計家／データサイエンティストです。" />
 
         {/* OGP Tags */}
         <meta property="og:title" content="西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="企業のデータ利活用支援や研修講師を行うデータサイエンティストです。" />
+        <meta property="og:description" content="データ利活用支援や研修講師を行う独立統計家／データサイエンティストです。" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tnishimaki.com/" />
         <link rel="canonical" href="https://tnishimaki.com/" />
@@ -52,10 +53,10 @@ export default function Home() {
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="企業のデータ利活用支援や研修講師を行うデータサイエンティストです。" />
+        <meta name="twitter:description" content="データ利活用支援や研修講師を行う独立統計家／データサイエンティストです。" />
         
         {/* Keywords */}
-        <meta name="keywords" content="データサイエンティスト,データサイエンス,AI,機械学習,統計学,分子系統学,Python,Excel,データ分析,教育" />
+        <meta name="keywords" content="データサイエンティスト,データサイエンス,統計家,AI,機械学習,統計学,分子系統学,Python,Excel,データ分析,教育" />
         
         {/* Schema.org JSON-LD */}
         <script
@@ -87,14 +88,14 @@ export default function Home() {
           }}></div>
           <div className="hero-content" style={{ maxWidth: '900px', position: 'relative', zIndex: 1 }}>
             <div className="hero-eyebrow">
-              Available for Freelance Work
+              Available for New Projects
             </div>
             <h1 className="hero-name">
               Takuma Nishimaki
               <span className="hero-name-ja">西巻 拓真</span>
             </h1>
             <p className="hero-title">
-              Data Scientist — Freelance
+            Statistician / Data Scientist
             </p>
             <p className="hero-description" style={{
               fontSize: '1.1rem',
@@ -103,7 +104,7 @@ export default function Home() {
               marginBottom: '3rem',
               lineHeight: 1.9,
             }}>
-              データ利活用ご支援と教育業を請け負うデータサイエンティストです。10年以上の実務経験を活かし、データドリブンな意思決定や人材育成を支援します。
+              10年超のビジネス経験と博士課程でのデータ解析研究実績を活かし、データドリブンな意思決定や人材育成を支援する独立統計家／データサイエンティストです。
             </p>
             <div className="hero-cta" style={{
               display: 'flex',
@@ -115,7 +116,7 @@ export default function Home() {
                 <span className="btn-arrow">→</span>
               </a>
               <a href="#services" className="btn">
-                <span>担当業務の詳細</span>
+                <span>担当可能業務</span>
               </a>
             </div>
           </div>
@@ -153,7 +154,7 @@ export default function Home() {
                   <div className="social-handle">@nishimaki</div>
                 </div>
               </div>
-              <p className="social-description">登録者数2.4万人を超えるデータサイエンス教育コンテンツ。初学者から実務者まで、統計・機械学習の本質を分かりやすく解説。</p>
+              <p className="social-description">登録者数2.4万人を超えるデータサイエンス教育コンテンツ。初学者から実務者まで、統計・機械学習の基本を解説しています。</p>
               <div className="social-meta">Educational Videos</div>
             </a>
 
@@ -216,7 +217,7 @@ export default function Home() {
                   <div className="social-handle">@t-24maki</div>
                 </div>
               </div>
-              <p className="social-description">オープンソースプロジェクトやサンプルコードを公開</p>
+              <p className="social-description">オープンソースプロジェクトやサンプルコードを公開しています。</p>
               <div className="social-meta">Code & Projects</div>
             </a>
             </div>
@@ -269,12 +270,12 @@ export default function Home() {
                 lineHeight: 1.8,
                 marginBottom: '2rem',
               }}>
-                経営課題解決に向けたデータ利活用の推進と全体設計を行います。要件定義・分析モデル構築・効果測定まで、継続的にご支援します。
+                経営課題解決に向けたデータ利活用の推進と全体設計を行います。要件定義・モデル構築・効果測定まで、一貫して継続的にご支援します。
               </p>
               <ul className="service-list" style={{ listStyle: 'none' }}>
                 <li>経営課題解決に向けたデータ利活用の戦略策定</li>
                 <li>学術的な裏付けと実用性を兼ね備えたAI/分析アルゴリズム設計</li>
-                <li>RWD利活用による価値創出</li>
+                <li>簡易的なデモUI開発</li>
               </ul>
             </div>
             <div className="service-card" style={{
@@ -309,9 +310,9 @@ export default function Home() {
                 企業・大学向けの教育企画、カリキュラム設計、教材開発、講義、フォローを行います。
               </p>
               <ul className="service-list" style={{ listStyle: 'none' }}>
-                <li>カスタムカリキュラム設計</li>
-                <li>教材・コンテンツ開発</li>
-                <li>継続的なフォローアップ</li>
+                <li>研修講師</li>
+                <li>学習教材開発</li>
+                <li>講義／講演</li>
               </ul>
             </div>
           </div>
@@ -352,7 +353,7 @@ export default function Home() {
             <div className="skill-category">
               <h3>開発言語</h3>
               <div className="skill-list" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {['Python', 'TypeScript', 'R', 'SQL'].map((skill) => (
+                {['Python', 'R', 'SQL', 'TypeScript'].map((skill) => (
                   <span key={skill} className="skill-tag" style={{
                     fontSize: '0.8rem',
                     color: 'var(--color-text-secondary)',
@@ -429,7 +430,7 @@ export default function Home() {
               margin: '0 auto 3rem',
               lineHeight: 1.8,
             }}>
-              データ利活用のご相談、研修のご依頼など、お気軽にお問い合わせください。
+              データ利活用関連のご相談、研修のご依頼など、お気軽にお問い合わせください。
             </p>
             <a href="/contact" className="btn btn-primary">
               <span>お問い合わせ</span>
