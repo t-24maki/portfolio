@@ -1,5 +1,6 @@
 // pages/index.js
 import Head from 'next/head';
+import Link from 'next/link';
 import Image from 'next/image';
 import { GraduationCap } from 'lucide-react';
 
@@ -432,10 +433,10 @@ export default function Home() {
             }}>
               データ利活用関連のご相談、研修のご依頼など、お気軽にお問い合わせください。
             </p>
-            <a href="/contact" className="btn btn-primary">
+            <Link href="/contact" className="btn btn-primary">
               <span>お問い合わせ</span>
               <span className="btn-arrow">→</span>
-            </a>
+            </Link>
           </div>
         </section>
       </div>
