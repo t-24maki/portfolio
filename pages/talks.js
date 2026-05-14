@@ -1,0 +1,219 @@
+// pages/talks.js
+import Head from 'next/head';
+
+export default function Talks() {
+  return (
+    <>
+      <Head>
+        <title>Talks - 西巻 拓真 / Takuma Nishimaki</title>
+        <meta name="description" content="セミナー、ウェビナー、学会等における講演・発表の実績です。講演・登壇のご依頼も受け付けております。" />
+        <meta property="og:title" content="Talks - 西巻 拓真 / Takuma Nishimaki" />
+        <meta property="og:description" content="セミナー、ウェビナー、学会等における講演・発表の実績です。講演・登壇のご依頼も受け付けております。" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tnishimaki.com/talks/" />
+        <link rel="canonical" href="https://tnishimaki.com/talks/" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Talks - 西巻 拓真 / Takuma Nishimaki" />
+        <meta name="twitter:description" content="セミナー、ウェビナー、学会等における講演・発表の実績です。講演・登壇のご依頼も受け付けております。" />
+      </Head>
+
+      <div>
+        <header className="page-header">
+          <div className="page-eyebrow">Talks & Presentations</div>
+          <h1 className="page-title">Talks</h1>
+          <p className="page-description">セミナー、ウェビナー、学会等における講演・発表の実績です。講演・登壇のご依頼も受け付けております。</p>
+        </header>
+
+        {/* Content */}
+        <main className="content-section">
+          {/* 講演 */}
+          <section className="category">
+            <div className="category-header">
+              <h2 className="category-title">講演</h2>
+              <span className="category-count">1</span>
+            </div>
+            <table className="entries-table">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Title</th>
+                  <th>Venue</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="entry-year">2025</td>
+                  <td className="entry-title">医学知識の無いデータサイエンティストがRWDを扱うという選択肢</td>
+                  <td className="entry-venue">医学研究のデータはここが面白い！『データサイエンティストのためのこれからのキャリア戦略』, Webinar</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          {/* 国際学会 口頭発表 */}
+          <section className="category">
+            <div className="category-header">
+              <h2 className="category-title">国際学会 口頭発表</h2>
+              <span className="category-count">2</span>
+            </div>
+            <table className="entries-table">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Title</th>
+                  <th>Venue</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="entry-year">2025</td>
+                  <td className="entry-title">
+                    Evaluation of molecular phylogenetic trees by an information-theoretic metric
+                    <div className="entry-authors"><strong>T. Nishimaki</strong>, K. Sato</div>
+                  </td>
+                  <td className="entry-venue">Evolution 2025, Athens, GA</td>
+                </tr>
+                <tr>
+                  <td className="entry-year">2019</td>
+                  <td className="entry-title">
+                    An extension of the Kimura two-parameter model for nucleotide sequences containing gaps
+                    <div className="entry-authors"><strong>T. Nishimaki</strong>, K. Sato</div>
+                  </td>
+                  <td className="entry-venue">Biotech Asia Pacific Congress 2019, Kyoto</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          {/* 国際学会 ポスター発表 */}
+          <section className="category">
+            <div className="category-header">
+              <h2 className="category-title">国際学会 ポスター発表</h2>
+              <span className="category-count">2</span>
+            </div>
+            <table className="entries-table">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Title</th>
+                  <th>Venue</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="entry-year">2020</td>
+                  <td className="entry-title">
+                    Development of a web application for phylogenetic analysis based on genetic difference considering the effect of gaps
+                    <div className="entry-authors"><strong>T. Nishimaki</strong>, K. Sato</div>
+                  </td>
+                  <td className="entry-venue">QBIC Workshop 2020, Tokyo University of Science</td>
+                </tr>
+                <tr>
+                  <td className="entry-year">2019</td>
+                  <td className="entry-title">
+                    An extension of the Kimura two-parameter model to evolutionary process including insertions and deletions
+                    <div className="entry-authors"><strong>T. Nishimaki</strong>, K. Sato</div>
+                  </td>
+                  <td className="entry-venue">QBIC Workshop 2019, Tokyo University of Science</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          {/* 国内学会 口頭発表 */}
+          <section className="category">
+            <div className="category-header">
+              <h2 className="category-title">国内学会 口頭発表</h2>
+              <span className="category-count">5</span>
+            </div>
+            <table className="entries-table">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Title</th>
+                  <th>Venue</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="entry-year">2026</td>
+                  <td className="entry-title">
+                    情報理論に基づく分子系統解析手法の評価
+                    <div className="entry-authors"><strong>西巻 拓真</strong>, 佐藤 圭子</div>
+                  </td>
+                  <td className="entry-venue">情報処理学会 第84回BIO合同研究発表会, 石川</td>
+                </tr>
+                <tr>
+                  <td className="entry-year">2015</td>
+                  <td className="entry-title">
+                    ギャップサイトを活用した新しい進化距離の尺度
+                    <div className="entry-authors"><strong>西巻拓真</strong></div>
+                  </td>
+                  <td className="entry-venue">生命情報科学若手の会第7回研究会, 山形</td>
+                </tr>
+                <tr>
+                  <td className="entry-year">2015</td>
+                  <td className="entry-title">
+                    塩基の挿入欠失を考慮した遺伝的差異の有用性
+                    <div className="entry-authors"><strong>西巻拓真</strong>, 佐藤圭子</div>
+                  </td>
+                  <td className="entry-venue">日本遺伝学会第87回大会, 宮城</td>
+                </tr>
+                <tr>
+                  <td className="entry-year">2014</td>
+                  <td className="entry-title">
+                    塩基の挿入欠失を含む進化モデルに基づく系統解析
+                    <div className="entry-authors"><strong>西巻拓真</strong>, 佐藤圭子, 原利英</div>
+                  </td>
+                  <td className="entry-venue">第39回生命の起源および進化学会, 広島</td>
+                </tr>
+                <tr>
+                  <td className="entry-year">2013</td>
+                  <td className="entry-title">
+                    Kimuraの2変数法の拡張
+                    <div className="entry-authors"><strong>西巻拓真</strong>, 佐藤圭子, 原利英</div>
+                  </td>
+                  <td className="entry-venue">第38回生命の起源および進化学会, 福岡</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          {/* 国内学会 ポスター発表 */}
+          <section className="category">
+            <div className="category-header">
+              <h2 className="category-title">国内学会 ポスター発表</h2>
+              <span className="category-count">1</span>
+            </div>
+            <table className="entries-table">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Title</th>
+                  <th>Venue</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="entry-year">2015</td>
+                  <td className="entry-title">
+                    塩基の挿入／欠失を考慮した遺伝的差異
+                    <div className="entry-authors"><strong>西巻拓真</strong>, 佐藤圭子</div>
+                  </td>
+                  <td className="entry-venue">日本進化学会第17回大会, 東京</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </>
+  );
+}
+
+// Static Site Generation
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
+}

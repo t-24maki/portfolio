@@ -1,12 +1,13 @@
-import { Github, Linkedin, Mail, FileText, User, Box, Video, Youtube, Globe } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText, User, Briefcase, GraduationCap, Mic, Wrench, Youtube } from 'lucide-react';
 import { XLogo } from './Icons';
 
 export const menuItems = [
   { id: 'profile', label: 'Profile', icon: User, path: '/' },
+  { id: 'services', label: 'Services', icon: Briefcase, path: '/services' },
+  { id: 'education', label: 'Education', icon: GraduationCap, path: '/education' },
+  { id: 'talks', label: 'Talks', icon: Mic, path: '/talks' },
   { id: 'publications', label: 'Publications', icon: FileText, path: '/publications' },
-  { id: 'presentations', label: 'Presentations', icon: Video, path: '/presentations' },
-  { id: 'web-contents', label: 'Web Contents', icon: Globe, path: '/web-contents' },
-  { id: 'products', label: 'Products', icon: Box, path: '/products' },
+  { id: 'tools', label: 'Tools', icon: Wrench, path: '/tools' },
   { id: 'contact', label: 'Contact', icon: Mail, path: '/contact' },
 ];
 
