@@ -2,6 +2,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { YouTubeIcon, NoteIcon, LinkedInIcon, XIcon, GitHubIcon } from '../components/Common/Icons';
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "西巻 拓真 / Takuma Nishimaki",
+  "alternateName": "Takuma Nishimaki",
+  "url": "https://tnishimaki.com/"
+};
+
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -49,6 +57,10 @@ export default function Home() {
         <meta name="twitter:title" content="西巻 拓真 / Takuma Nishimaki" />
         <meta name="twitter:description" content="データ利活用支援や研修講師を行う独立統計家／データサイエンティストです。" />
         <meta name="keywords" content="データサイエンティスト,データサイエンス,統計家,AI,機械学習,統計学,分子系統学,Python,Excel,データ分析,教育" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "T. Nishimaki",
+  "name": "西巻 拓真 / Takuma Nishimaki",
   "icons": [
     {
       "src": "images/icon_transparent.png",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#f7f7f5",
+  "background_color": "#f7f7f5"
 }

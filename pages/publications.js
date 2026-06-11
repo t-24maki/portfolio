@@ -5,11 +5,11 @@ export default function Publications() {
   return (
     <>
       <Head>
-        <title>西巻 拓真 / Takuma Nishimaki [Publications]</title>
+        <title>Publications - 西巻 拓真 / Takuma Nishimaki</title>
         <meta name="description" content="論文発表、学会発表などの研究業績一覧です。" />
         
         {/* OGP Tags */}
-        <meta property="og:title" content="西巻 拓真 / Takuma Nishimaki [Publications]" />
+        <meta property="og:title" content="Publications - 西巻 拓真 / Takuma Nishimaki" />
         <meta property="og:description" content="論文発表、学会発表などの研究業績一覧です。" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tnishimaki.com/publications/" />
@@ -17,7 +17,7 @@ export default function Publications() {
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="西巻 拓真 / Takuma Nishimaki [Publications]" />
+        <meta name="twitter:title" content="Publications - 西巻 拓真 / Takuma Nishimaki" />
         <meta name="twitter:description" content="論文発表、学会発表などの研究業績一覧です。" />
       </Head>
 
