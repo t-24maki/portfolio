@@ -1,5 +1,5 @@
 // pages/tools/normal-distribution/index.js
-import Head from 'next/head';
+import SEO from '../../../components/Common/SEO';
 import Link from 'next/link';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import katex from 'katex';
@@ -153,20 +153,14 @@ export default function NormalDistributionGraphMaker() {
 
   return (
     <>
-      <Head>
-        <title>Normal Distribution Graph Maker - 西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="任意の正規分布（ガウス分布）の曲線を作成し、背景透過画像(PNG)をダウンロードできるフリーツール。" />
-        <meta property="og:title" content="Normal Distribution Graph Maker - 西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="任意の正規分布（ガウス分布）の曲線を作成し、背景透過画像(PNG)をダウンロードできるフリーツール。" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/tools/normal-distribution/" />
-        <link rel="canonical" href="https://tnishimaki.com/tools/normal-distribution/" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Normal Distribution Graph Maker - 西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="任意の正規分布（ガウス分布）の曲線を作成し、背景透過画像(PNG)をダウンロードできるフリーツール。" />
+      <SEO
+        title="【フリー素材】正規分布グラフメーカー - Normal Distribution Graph Maker"
+        description="任意の正規分布（ガウス分布）の曲線を作成し、背景透過画像(PNG)をダウンロードできるフリーツール。"
+        path="/tools/normal-distribution/"
+      >
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://tnishimaki.com/tools/" }, { "@type": "ListItem", "position": 3, "name": "Normal Distribution Graph Maker" }] }) }} />
-      </Head>
+      </SEO>
 
       <div>
         <header className="page-header">

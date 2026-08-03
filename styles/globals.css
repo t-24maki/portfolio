@@ -841,14 +841,6 @@ nav {
   letter-spacing: 0.02em;
 }
 
-.category-count {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--color-text-tertiary);
-  padding: 0.2rem 0.5rem;
-  background: var(--color-surface-alt);
-}
-
 /* Table */
 .entries-table {
   width: 100%;

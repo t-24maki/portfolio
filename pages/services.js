@@ -1,28 +1,21 @@
-import Head from 'next/head';
+import SEO from '../components/Common/SEO';
 import Link from 'next/link';
 
 export default function Services() {
   return (
     <>
-      <Head>
-        <title>Services - 西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="データ利活用の戦略策定から組織づくり、教育・研修まで、企業のデータ活用推進を幅広く支援しています。まずはお気軽にご相談ください。" />
-        <meta property="og:title" content="Services - 西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="データ利活用の戦略策定から組織づくり、教育・研修まで、企業のデータ活用推進を幅広く支援しています。まずはお気軽にご相談ください。" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/services/" />
-        <link rel="canonical" href="https://tnishimaki.com/services/" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Services - 西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="データ利活用の戦略策定から組織づくり、教育・研修まで、企業のデータ活用推進を幅広く支援しています。まずはお気軽にご相談ください。" />
-      </Head>
+      <SEO
+        title="Services - 西巻 拓真 / Takuma Nishimaki"
+        description="データ利活用の戦略策定、組織作り、教育など、企業のデータ活用推進を幅広く支援しています。まずはお気軽にご相談ください。"
+        path="/services/"
+      />
 
       <div>
         <header className="page-header">
           <div className="page-eyebrow">What I Do</div>
           <h1 className="page-title">Services</h1>
           <p className="page-description">
-            データ利活用の戦略策定から組織づくり、教育・研修まで、企業のデータ活用推進を幅広く支援しています。まずはお気軽にご相談ください。
+            データ利活用の戦略策定、組織作り、教育など、企業のデータ活用推進を幅広く支援しています。まずはお気軽にご相談ください。
           </p>
         </header>
 
@@ -30,7 +23,7 @@ export default function Services() {
           {/* データ利活用顧問・アドバイザリー */}
           <section className="category" id="advisory">
             <div className="category-header">
-              <h2 className="category-title">データ利活用顧問・アドバイザリー</h2>
+              <h2 className="category-title">データ利活用支援・アドバイザリー</h2>
             </div>
             <div className="services-detail">
               <p className="services-detail-description">
@@ -40,19 +33,19 @@ export default function Services() {
                 <div className="services-detail-card">
                   <h3 className="services-detail-card-title">データ利活用戦略の策定</h3>
                   <p className="services-detail-card-text">
-                    事業KPIの整理から、データ基盤の設計、分析ロードマップの作成まで、データドリブンな意思決定体制の構築を支援します。
+                    事業KPIの整理、データ基盤の設計、分析ロードマップの作成まで、データドリブンな意思決定体制の構築を支援します。
                   </p>
                 </div>
                 <div className="services-detail-card">
                   <h3 className="services-detail-card-title">AI・分析アルゴリズム設計</h3>
                   <p className="services-detail-card-text">
-                    学術的な裏付けと実用性を兼ね備えた分析手法の選定・モデル設計を行います。予測モデル、因果推論、最適化など幅広い領域に対応します。
+                    学術的な裏付けと実用性を兼ね備えた分析手法の設計・実装を行います。
                   </p>
                 </div>
                 <div className="services-detail-card">
-                  <h3 className="services-detail-card-title">プロトタイプ・デモUI開発</h3>
+                  <h3 className="services-detail-card-title">プロトタイプ・シミュレータ開発</h3>
                   <p className="services-detail-card-text">
-                    分析結果を関係者に共有するためのダッシュボードや簡易的なデモアプリケーションの開発を行います。
+                    分析結果の実用化に向けたダッシュボードや簡易的なシミュレータ、デモアプリケーションの開発を行います。
                   </p>
                 </div>
               </div>
@@ -63,29 +56,29 @@ export default function Services() {
           {/* 企業研修・データ活用人材育成 */}
           <section className="category" id="training">
             <div className="category-header">
-              <h2 className="category-title">企業研修・データ活用人材育成</h2>
+              <h2 className="category-title">データ活用人材育成</h2>
             </div>
             <div className="services-detail">
               <p className="services-detail-description">
-                企業・大学向けの教育企画、カリキュラム設計、教材開発、講義、フォローアップまでを一貫して行います。
+                企業・大学向けのデータ利活用に関する講義講演、フォローアップを一貫して行います。
               </p>
               <div className="services-detail-grid">
                 <div className="services-detail-card">
-                  <h3 className="services-detail-card-title">研修講師</h3>
+                  <h3 className="services-detail-card-title">データリテラシー講座</h3>
                   <p className="services-detail-card-text">
-                    統計学・機械学習・データ分析の基本から実践まで、受講者のレベルに合わせた研修を実施します。ハンズオン形式にも対応しています。
+                  「データを読む目」を養うための、ビジネスパーソンのための統計リテラシーについて扱います。
                   </p>
                 </div>
                 <div className="services-detail-card">
-                  <h3 className="services-detail-card-title">学習教材開発</h3>
+                  <h3 className="services-detail-card-title">実践統計学講座</h3>
                   <p className="services-detail-card-text">
-                    eラーニング教材、テキスト、演習課題など、組織のニーズに応じたオリジナル教材を企画・制作します。
+                    統計学をただ学ぶだけでなく、「現場で使える」ようにするためのノウハウを扱います。
                   </p>
                 </div>
                 <div className="services-detail-card">
-                  <h3 className="services-detail-card-title">講義・講演</h3>
+                  <h3 className="services-detail-card-title">データドリブンマーケ講座</h3>
                   <p className="services-detail-card-text">
-                    大学での講義や企業セミナーでの講演を承ります。データサイエンスの最新動向や実務への活用について、わかりやすくお伝えします。
+                  企業がデータ活用を進める、その第一歩を踏み出すための思考法や具体的な行動について扱います。
                   </p>
                 </div>
               </div>

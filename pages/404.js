@@ -1,14 +1,14 @@
 // pages/404.js
-import Head from 'next/head';
+import SEO from '../components/Common/SEO';
 import Link from 'next/link';
 
 export default function NotFound() {
   return (
     <>
-      <Head>
-        <title>ページが見つかりません - 西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="robots" content="noindex" />
-      </Head>
+      <SEO
+        title="ページが見つかりません - 西巻 拓真 / Takuma Nishimaki"
+        noindex
+      />
 
       <div>
         <header className="page-header">

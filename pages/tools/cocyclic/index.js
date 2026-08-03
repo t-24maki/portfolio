@@ -1,5 +1,5 @@
 // pages/tools/cocyclic/index.js
-import Head from 'next/head';
+import SEO from '../../../components/Common/SEO';
 import Link from 'next/link';
 import { useState, useRef, useEffect, useCallback } from 'react';
 
@@ -182,19 +182,13 @@ export default function CocyclicGame() {
 
   return (
     <>
-      <Head>
-        <title>Cocyclic - 西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="碁盤上に石を置いて、4つの石が同一円周上に並ばないようにするパズルゲーム「共円」。" />
-        <meta property="og:title" content="Cocyclic - 西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="碁盤上に石を置いて、4つの石が同一円周上に並ばないようにするパズルゲーム「共円」。" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/tools/cocyclic/" />
-        <link rel="canonical" href="https://tnishimaki.com/tools/cocyclic/" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Cocyclic - 西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="碁盤上に石を置いて、4つの石が同一円周上に並ばないようにするパズルゲーム「共円」。" />
+      <SEO
+        title="「共円」で遊んでみよう"
+        description="碁盤上に石を置いて、4つの石が同一円周上に並ばないようにするパズルゲーム「共円」がWeb上で遊べます。"
+        path="/tools/cocyclic/"
+      >
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://tnishimaki.com/tools/" }, { "@type": "ListItem", "position": 3, "name": "共円 (Cocyclic)" }] }) }} />
-      </Head>
+      </SEO>
 
       <div>
         <header className="page-header">
@@ -353,6 +347,9 @@ export default function CocyclicGame() {
                 <p>
                   ちなみに長方形、等脚台形でなくても共円となってしまう組み合わせは無数に存在します。色々と考えてみましょう。
                 </p>
+                <div style={{ marginTop: '1.5rem' }}>
+                  <img src="/images/kyoen1.png" alt="共円の基本的な考え方" style={{ maxWidth: '50%', height: 'auto', borderRadius: '8px' }} />
+                </div>
               </div>
             </div>
 
@@ -364,6 +361,9 @@ export default function CocyclicGame() {
                 <p>
                   共円を作らずにいくつ石を置けるか検証したところ、17個まで置けました。もしこれ以上石を置けたら教えてください。
                 </p>
+                <div style={{ marginTop: '1.5rem' }}>
+                  <img src="/images/kyoen2.png" alt="作者の記録" style={{ maxWidth: '50%', height: 'auto', borderRadius: '8px' }} />
+                </div>
               </div>
             </div>
           </div>

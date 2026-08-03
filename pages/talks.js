@@ -1,21 +1,14 @@
 // pages/talks.js
-import Head from 'next/head';
+import SEO from '../components/Common/SEO';
 
 export default function Talks() {
   return (
     <>
-      <Head>
-        <title>Talks - 西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="セミナー、ウェビナー、学会等における講演・発表の実績です。講演・登壇のご依頼も受け付けております。" />
-        <meta property="og:title" content="Talks - 西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="セミナー、ウェビナー、学会等における講演・発表の実績です。講演・登壇のご依頼も受け付けております。" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/talks/" />
-        <link rel="canonical" href="https://tnishimaki.com/talks/" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Talks - 西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="セミナー、ウェビナー、学会等における講演・発表の実績です。講演・登壇のご依頼も受け付けております。" />
-      </Head>
+      <SEO
+        title="Talks - 西巻 拓真 / Takuma Nishimaki"
+        description="セミナー、ウェビナー、学会等における講演・発表の実績です。講演・登壇のご依頼も受け付けております。"
+        path="/talks/"
+      />
 
       <div>
         <header className="page-header">
@@ -30,7 +23,6 @@ export default function Talks() {
           <section className="category">
             <div className="category-header">
               <h2 className="category-title">講演</h2>
-              <span className="category-count">1</span>
             </div>
             <table className="entries-table">
               <thead>
@@ -54,7 +46,6 @@ export default function Talks() {
           <section className="category">
             <div className="category-header">
               <h2 className="category-title">国際学会 口頭発表</h2>
-              <span className="category-count">2</span>
             </div>
             <table className="entries-table">
               <thead>
@@ -89,7 +80,6 @@ export default function Talks() {
           <section className="category">
             <div className="category-header">
               <h2 className="category-title">国際学会 ポスター発表</h2>
-              <span className="category-count">2</span>
             </div>
             <table className="entries-table">
               <thead>
@@ -124,7 +114,6 @@ export default function Talks() {
           <section className="category">
             <div className="category-header">
               <h2 className="category-title">国内学会 口頭発表</h2>
-              <span className="category-count">5</span>
             </div>
             <table className="entries-table">
               <thead>
@@ -183,7 +172,6 @@ export default function Talks() {
           <section className="category">
             <div className="category-header">
               <h2 className="category-title">国内学会 ポスター発表</h2>
-              <span className="category-count">1</span>
             </div>
             <table className="entries-table">
               <thead>

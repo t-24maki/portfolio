@@ -1,21 +1,14 @@
-import Head from 'next/head';
+import SEO from '../components/Common/SEO';
 import { YouTubeIcon, NoteIcon, LinkedInIcon, XIcon, GitHubIcon } from '../components/Common/Icons';
 
 export default function Contact() {
   return (
     <>
-      <Head>
-        <title>Contact - 西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="データ利活用のご相談、研修のご依頼など、お気軽にお問い合わせください。" />
-        <meta property="og:title" content="Contact - 西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="データ利活用のご相談、研修のご依頼など、お気軽にお問い合わせください。" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/contact/" />
-        <link rel="canonical" href="https://tnishimaki.com/contact/" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Contact - 西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="データ利活用のご相談、研修のご依頼など、お気軽にお問い合わせください。" />
-      </Head>
+      <SEO
+        title="Contact - 西巻 拓真 / Takuma Nishimaki"
+        description="データ利活用のご相談、研修のご依頼など、お気軽にお問い合わせください。"
+        path="/contact/"
+      />
 
       <div>
         <header className="page-header">

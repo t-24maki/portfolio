@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SEO from '../components/Common/SEO';
 import Link from 'next/link';
 import { YouTubeIcon, NoteIcon, LinkedInIcon, XIcon, GitHubIcon } from '../components/Common/Icons';
 
@@ -15,7 +15,7 @@ const schemaData = {
   "@type": "Person",
   "name": "西巻 拓真 / Takuma Nishimaki",
   "alternateName": "Takuma Nishimaki",
-  "jobTitle": "Data Scientist - Freelance",
+  "jobTitle": "Data Scientist",
   "description": "企業のデータ利活用支援や研修講師を行うデータサイエンティストです。",
   "url": "https://tnishimaki.com",
   "sameAs": [
@@ -28,6 +28,8 @@ const schemaData = {
   "knowsAbout": [
     "データサイエンス",
     "データサイエンティスト",
+    "データアナリスト",
+    "統計家",
     "フリーランス",
     "機械学習",
     "統計学",
@@ -45,18 +47,11 @@ const schemaData = {
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="データ利活用支援や研修講師を行う独立統計家／データサイエンティストです。" />
-        <meta property="og:title" content="西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="データ利活用支援や研修講師を行う独立統計家／データサイエンティストです。" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/" />
-        <link rel="canonical" href="https://tnishimaki.com/" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="データ利活用支援や研修講師を行う独立統計家／データサイエンティストです。" />
-        <meta name="keywords" content="データサイエンティスト,データサイエンス,統計家,AI,機械学習,統計学,分子系統学,Python,Excel,データ分析,教育" />
+      <SEO
+        title="西巻 拓真 / Takuma Nishimaki"
+        description="データ利活用支援や講義講演業を行う独立統計家／データサイエンティストです。"
+        path="/"
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
@@ -65,7 +60,7 @@ export default function Home() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
-      </Head>
+      </SEO>
 
       <div>
         {/* Hero Section */}
@@ -82,7 +77,7 @@ export default function Home() {
               Statistician / Data Scientist
             </p>
             <p className="hero-description">
-              10年超のビジネス経験と博士課程でのデータ解析研究実績を活かし、組織のデータ利活用や人材育成を支援する独立統計家／データサイエンティストです。
+            独立統計家(データサイエンティスト)です。SIer／コンサルファームでのビジネス経験と博士課程でのデータ解析研究実績を活かし、組織のデータ利活用や人材育成を支援しています。
             </p>
             <div className="hero-cta">
               <a href="#contact" className="btn btn-primary">
@@ -112,7 +107,7 @@ export default function Home() {
                     <div className="social-handle">@nishimaki</div>
                   </div>
                 </div>
-                <p className="social-description">登録者数2.4万人を超えるデータサイエンス教育コンテンツ。初学者から実務者まで、統計・機械学習の基本を解説しています。</p>
+                <p className="social-description">登録者数2.4万人を超えるデータサイエンス教育コンテンツ。初学者から実務者に向け、統計学や機械学習の基本を解説しています。</p>
                 <div className="social-meta">Educational Videos</div>
               </a>
 
@@ -124,7 +119,7 @@ export default function Home() {
                     <div className="social-handle">@tnishimaki</div>
                   </div>
                 </div>
-                <p className="social-description">データサイエンスの基本や実践ノウハウについて、より深い考察を記事として発信しています。</p>
+                <p className="social-description">データ分析の基本や実践ノウハウについて、より深い考察を記事として発信しています。</p>
                 <div className="social-meta">Long-form Articles</div>
               </a>
 
@@ -136,7 +131,7 @@ export default function Home() {
                     <div className="social-handle">@nishimaki</div>
                   </div>
                 </div>
-                <p className="social-description">仕事遍歴や実績などを公開しています。</p>
+                <p className="social-description">詳細な所属遍歴や実績などを公開しています。</p>
                 <div className="social-meta">Articles & Insights</div>
               </a>
 
@@ -189,14 +184,14 @@ export default function Home() {
               </Link>
               <Link href="/services#training" className="service-card">
                 <span className="service-number">02</span>
-                <h3 className="service-title">データサイエンス教育／研修</h3>
+                <h3 className="service-title">データサイエンス教育</h3>
                 <p className="service-description">
-                  企業・大学向けの教育企画、カリキュラム設計、教材開発、講義、フォローを行います。
+                  企業・大学向けの教育カリキュラム設計、教材開発、講義、フォローを行います。
                 </p>
                 <ul className="service-list">
-                  <li>研修講師</li>
-                  <li>学習教材開発</li>
-                  <li>講義／講演</li>
+                  <li>データリテラシー</li>
+                  <li>ビジネス統計解析</li>
+                  <li>データドリブンマーケティング</li>
                 </ul>
               </Link>
             </div>

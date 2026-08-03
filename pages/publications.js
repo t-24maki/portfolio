@@ -1,25 +1,14 @@
 // pages/publications.js
-import Head from 'next/head';
+import SEO from '../components/Common/SEO';
 
 export default function Publications() {
   return (
     <>
-      <Head>
-        <title>Publications - 西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="論文発表、学会発表などの研究業績一覧です。" />
-        
-        {/* OGP Tags */}
-        <meta property="og:title" content="Publications - 西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="論文発表、学会発表などの研究業績一覧です。" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/publications/" />
-        <link rel="canonical" href="https://tnishimaki.com/publications/" />
-
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Publications - 西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="論文発表、学会発表などの研究業績一覧です。" />
-      </Head>
+      <SEO
+        title="Publications - 西巻 拓真 / Takuma Nishimaki"
+        description="論文発表、学会発表などの研究業績一覧です。"
+        path="/publications/"
+      />
 
       <div>
         {/* Page Header */}
@@ -35,7 +24,6 @@ export default function Publications() {
           <section className="category">
             <div className="category-header">
               <h2 className="category-title">学術雑誌（査読あり）</h2>
-              <span className="category-count">2</span>
             </div>
             <table className="entries-table">
               <thead>
@@ -46,6 +34,25 @@ export default function Publications() {
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td className="entry-year">2026</td>
+                  <td className="entry-content">
+                    <div className="entry-title">Evaluation of Molecular Phylogenetic Trees by an Information-Theoretic Metric</div>
+                    <div className="entry-authors"><strong>T. Nishimaki</strong>, K. Sato</div>
+                    <div className="entry-journal">Journal of Molecular Evolution 94.4 (2026): 726-735</div>
+                  </td>
+                  <td className="entry-actions">
+                    <a
+                      href="https://link.springer.com/article/10.1007/s00239-026-10334-3"
+                      className="entry-link"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      View
+                      <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/></svg>
+                    </a>
+                  </td>
+                </tr>
                 <tr>
                   <td className="entry-year">2021</td>
                   <td className="entry-content">

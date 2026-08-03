@@ -9,6 +9,10 @@ export default function Document() {
         <link rel="manifest" href="/manifest.json" />
         <meta property="og:site_name" content="西巻 拓真 / Takuma Nishimaki" />
         <meta property="og:image" content="https://tnishimaki.com/images/site-image.jpg" />
+        <meta property="og:image:width" content="3000" />
+        <meta property="og:image:height" content="1688" />
+        <meta property="og:image:alt" content="西巻 拓真 / Takuma Nishimaki" />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta name="twitter:image" content="https://tnishimaki.com/images/site-image.jpg" />
       </Head>
       <body>

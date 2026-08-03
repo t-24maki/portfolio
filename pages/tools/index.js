@@ -1,26 +1,15 @@
 // pages/tools.js
-import Head from 'next/head';
+import SEO from '../../components/Common/SEO';
 import Link from 'next/link';
 
 export default function Tools() {
   return (
     <>
-      <Head>
-        <title>Tools - 西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="Webツール、モバイルアプリ、Webサービスなど、開発した各種ツールをまとめています。" />
-
-        {/* OGP Tags */}
-        <meta property="og:title" content="Tools - 西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="Webツール、モバイルアプリ、Webサービスなど、開発した各種ツールをまとめています。" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/tools/" />
-        <link rel="canonical" href="https://tnishimaki.com/tools/" />
-
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Tools - 西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="Webツール、モバイルアプリ、Webサービスなど、開発した各種ツールをまとめています。" />
-      </Head>
+      <SEO
+        title="Tools - 西巻 拓真 / Takuma Nishimaki"
+        description="Webツール、モバイルアプリ、Webサービスなど、開発した各種ツールをまとめています。"
+        path="/tools/"
+      />
 
       <div>
         {/* Page Header */}

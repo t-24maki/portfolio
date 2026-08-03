@@ -1,5 +1,5 @@
 // pages/tools/sample-size/index.js
-import Head from 'next/head';
+import SEO from '../../../components/Common/SEO';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import katex from 'katex';
@@ -81,20 +81,14 @@ export default function SampleSizeCalculator() {
 
   return (
     <>
-      <Head>
-        <title>Sample Size Calculator - 西巻 拓真 / Takuma Nishimaki</title>
-        <meta name="description" content="アンケート調査に必要なサンプルサイズを統計学的に算出するツール。母集団・許容誤差・信頼度・回答比率から必要数を計算します。" />
-        <meta property="og:title" content="Sample Size Calculator - 西巻 拓真 / Takuma Nishimaki" />
-        <meta property="og:description" content="アンケート調査に必要なサンプルサイズを統計学的に算出するツール。" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://tnishimaki.com/tools/sample-size/" />
-        <link rel="canonical" href="https://tnishimaki.com/tools/sample-size/" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Sample Size Calculator - 西巻 拓真 / Takuma Nishimaki" />
-        <meta name="twitter:description" content="アンケート調査に必要なサンプルサイズを統計学的に算出するツール。" />
+      <SEO
+        title="アンケート調査の必要サンプル数計算ツール - Sample Size Calculator"
+        description="アンケート調査に必要なサンプルサイズを統計学的に算出するWebアプリです。母集団・許容誤差・信頼度・回答比率から必要数を計算します。"
+        path="/tools/sample-size/"
+      >
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://tnishimaki.com/tools/" }, { "@type": "ListItem", "position": 3, "name": "Sample Size Calculator" }] }) }} />
-      </Head>
+      </SEO>
 
       <div>
         {/* Breadcrumb */}
