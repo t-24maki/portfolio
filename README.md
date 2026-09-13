@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Takuma Nishimaki — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[tnishimaki.com](https://tnishimaki.com/) のソースコードです。Next.jsの静的エクスポートを使用しています。
 
-## Available Scripts
+## ページ構成
 
-In the project directory, you can run:
+| ページ | URL | 内容 |
+| --- | --- | --- |
+| About | `/` | プロフィール、提供サービス、主な活動、連絡先 |
+| Media | `/media/` | 講演・セミナー、掲載情報、Web発信 |
+| Research | `/research/` | 論文・学会発表 |
+| Works | `/works/` | Webツール、アプリ、Webサイト |
 
-### `npm start`
+個別のWebツールは `/tools/` 配下で引き続き公開します。旧ページのURLは新ページへの移動案内として残しています。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ローカル開発
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+検証環境はNode.js 22です。
 
-### `npm test`
+```sh
+npm ci
+npm run dev -- --hostname 127.0.0.1 --port 3000
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 検証と公開用ビルド
 
-### `npm run build`
+開発サーバーを停止してから実行します。開発とビルドで共通の `.next/` を使用するため、同時に実行しないでください。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+node --test tests/chi-square.test.mjs
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+公開用ファイルは `out/` に生成されます。ソースコードをGitへpushした後、FileZillaで `out/` の中身を公開ディレクトリにアップロードします。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+詳しい差し替え手順と旧ページの扱いは [DEPLOYMENT.md](DEPLOYMENT.md) を参照してください。

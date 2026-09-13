@@ -1,15 +1,14 @@
-import { Github, Linkedin, Mail, FileText, User, Briefcase, GraduationCap, Mic, Wrench, Youtube } from 'lucide-react';
+import { Github, Linkedin, FileText, User, Mic, Wrench, Youtube } from 'lucide-react';
 import { XLogo } from './Icons';
 
 export const menuItems = [
-  { id: 'profile', label: 'Profile', icon: User, path: '/' },
-  { id: 'services', label: 'Services', icon: Briefcase, path: '/services' },
-  { id: 'education', label: 'Education', icon: GraduationCap, path: '/education' },
-  { id: 'talks', label: 'Talks', icon: Mic, path: '/talks' },
-  { id: 'publications', label: 'Publications', icon: FileText, path: '/publications' },
-  { id: 'tools', label: 'Tools', icon: Wrench, path: '/tools' },
-  { id: 'contact', label: 'Contact', icon: Mail, path: '/contact' },
+  { id: 'about', label: 'About', icon: User, path: '/' },
+  { id: 'media', label: 'Media', icon: Mic, path: '/media/' },
+  { id: 'research', label: 'Research', icon: FileText, path: '/research/' },
+  { id: 'works', label: 'Works', icon: Wrench, path: '/works/' },
 ];
+
+export const contactEmail = 'takuma.nishimaki@gmail.com';
 
 export const socialLinks = [
   { icon: Github, href: 'https://github.com/t-24maki/', label: 'GitHub' },

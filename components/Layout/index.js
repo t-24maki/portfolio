@@ -1,5 +1,5 @@
 // components/Layout/index.js
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { menuItems } from '../Common/navigationData';
@@ -9,19 +9,43 @@ export default function Layout({ children }) {
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuButton = useRef(null);
+  const isActive = (item) => item.id === 'works'
+    ? router.pathname === '/works' || router.pathname.startsWith('/tools/')
+    : router.pathname === item.path.replace(/\/$/, '') || (item.id === 'about' && router.pathname === '/');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
-  }, [router.pathname]);
+  }, [router.asPath]);
+
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 901px)');
+    const closeOnDesktop = (event) => { if (event.matches) setMobileMenuOpen(false); };
+    desktop.addEventListener('change', closeOnDesktop);
+    return () => desktop.removeEventListener('change', closeOnDesktop);
+  }, []);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mobileMenuOpen]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -36,13 +60,12 @@ export default function Layout({ children }) {
   return (
     <>
       {/* Navigation */}
-      <nav style={{
+      <nav aria-label="メインナビゲーション" className="site-nav" style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         zIndex: 100,
-        padding: '1.5rem 3rem',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -53,48 +76,36 @@ export default function Layout({ children }) {
       }}>
         <Link href="/" className="nav-logo">T. Nishimaki</Link>
         <ul className="nav-links">
-          <li><Link href="/">Profile</Link></li>
-          <li><Link href="/services">Services</Link></li>
-          <li><Link href="/education">Education</Link></li>
-          <li><Link href="/talks">Talks</Link></li>
-          <li><Link href="/publications">Publications</Link></li>
-          <li><Link href="/tools">Tools</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
+          {menuItems.map((item) => (
+            <li key={item.id}><Link href={item.path} aria-current={isActive(item) ? 'page' : undefined}>{item.label}</Link></li>
+          ))}
         </ul>
-        <div className="nav-social">
-          <a href="https://www.youtube.com/@nishimaki/" target="_blank" rel="noopener" aria-label="YouTube">
-            <YouTubeIcon />
-          </a>
-          <a href="https://note.com/tnishimaki" target="_blank" rel="noopener" aria-label="note">
-            <NoteIcon />
-          </a>
-          <a href="https://www.linkedin.com/in/nishimaki/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <LinkedInIcon />
-          </a>
-        </div>
+        <div className="nav-actions">
+          <Link href="/#contact" className="nav-contact" onClick={() => setMobileMenuOpen(false)}>お問い合わせ <span aria-hidden="true">↗</span></Link>
 
-        {/* Mobile hamburger button */}
-        <button
-          className="nav-hamburger"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="メニュー"
-        >
-          <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-        </button>
+          {/* Mobile hamburger button */}
+          <button
+            className="nav-hamburger"
+            ref={menuButton}
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu overlay */}
-      <div className={`mobile-menu ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+      <div id="mobile-menu" className={`mobile-menu ${mobileMenuOpen ? 'mobile-menu-open' : ''}`} inert={!mobileMenuOpen}>
         <ul className="mobile-menu-links">
-          <li><Link href="/">Profile</Link></li>
-          <li><Link href="/services">Services</Link></li>
-          <li><Link href="/education">Education</Link></li>
-          <li><Link href="/talks">Talks</Link></li>
-          <li><Link href="/publications">Publications</Link></li>
-          <li><Link href="/tools">Tools</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
+          {menuItems.map((item) => (
+            <li key={item.id}><Link href={item.path} aria-current={isActive(item) ? 'page' : undefined} onClick={() => setMobileMenuOpen(false)}>{item.label}</Link></li>
+          ))}
         </ul>
         <div className="mobile-menu-social">
           <a href="https://www.youtube.com/@nishimaki/" target="_blank" rel="noopener" aria-label="YouTube">
@@ -110,13 +121,12 @@ export default function Layout({ children }) {
       </div>
 
       {/* Main Content */}
-      <main style={{ paddingTop: '80px' }}>
+      <main style={{ paddingTop: '80px' }} inert={mobileMenuOpen}>
         {children}
       </main>
 
       {/* Footer */}
-      <footer style={{
-        padding: '3rem',
+      <footer className="site-footer" inert={mobileMenuOpen} style={{
         background: 'var(--color-bg)',
         borderTop: '1px solid var(--color-border-subtle)',
         display: 'flex',

@@ -187,13 +187,13 @@ export default function CocyclicGame() {
         description="碁盤上に石を置いて、4つの石が同一円周上に並ばないようにするパズルゲーム「共円」がWeb上で遊べます。"
         path="/tools/cocyclic/"
       >
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://tnishimaki.com/tools/" }, { "@type": "ListItem", "position": 3, "name": "共円 (Cocyclic)" }] }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "About", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Works", "item": "https://tnishimaki.com/works/" }, { "@type": "ListItem", "position": 3, "name": "共円 (Cocyclic)" }] }) }} />
       </SEO>
 
       <div>
         <header className="page-header">
           <div className="page-eyebrow">
-            <Link href="/tools/" style={{ color: 'inherit', textDecoration: 'none' }}>Tools</Link>
+            <Link href="/works/" style={{ color: 'inherit', textDecoration: 'none' }}>Works</Link>
             <span style={{ margin: '0 0.25rem' }}>/</span>
             <span>Cocyclic</span>
           </div>
@@ -370,11 +370,11 @@ export default function CocyclicGame() {
 
           {/* Back Link */}
           <div style={{ marginTop: '3rem' }}>
-            <Link href="/tools/" className="entry-link">
+            <Link href="/works/" className="entry-link">
               <svg viewBox="0 0 24 24" style={{ transform: 'rotate(180deg)' }}>
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              ツール一覧に戻る
+              Worksに戻る
             </Link>
           </div>
         </main>

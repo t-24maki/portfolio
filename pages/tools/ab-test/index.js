@@ -3,6 +3,7 @@ import SEO from '../../../components/Common/SEO';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import katex from 'katex';
+import { chiSquareSurvival1 } from '../../../lib/chi-square.mjs';
 
 function KaTeX({ math, display = false }) {
   const ref = useRef(null);
@@ -15,37 +16,6 @@ function KaTeX({ math, display = false }) {
     }
   }, [math, display]);
   return <span ref={ref} />;
-}
-
-// Statistical helper functions
-function logGamma(x) {
-  const c = [76.18009172947146, -86.50532032941677, 24.01409824083091, -1.231739572450155, 0.1208650973866179e-2, -0.5395239384953e-5];
-  let sum = 1.000000000190015;
-  let tmp = x + 5.5;
-  tmp -= (x + 0.5) * Math.log(tmp);
-  for (let i = 0; i < 6; i++) {
-    sum += c[i] / (x + i + 1);
-  }
-  return -tmp + Math.log(2.5066282746310005 * sum / x);
-}
-
-function lowRegGamma(a, x) {
-  const MAX_ITERATIONS = 1000;
-  const EPSILON = 1e-8;
-  let sum = 0;
-  let term = 1 / a;
-  let n = 1;
-  while (Math.abs(term) > EPSILON && n < MAX_ITERATIONS) {
-    sum += term;
-    term *= (x / (a + n));
-    n++;
-  }
-  return sum * Math.exp(-x + a * Math.log(x) - logGamma(a));
-}
-
-function chiSquareCDF(x, k) {
-  if (x <= 0) return 0;
-  return lowRegGamma(k / 2, x / 2);
 }
 
 export default function ABTestCalculator() {
@@ -62,14 +32,25 @@ export default function ABTestCalculator() {
     setError(null);
     setIsCalculated(true);
 
-    const alpha = parseInt(confidenceLevel) / 100;
-    const cA = parseInt(clicksA);
-    const cvA = parseInt(conversionsA);
-    const cB = parseInt(clicksB);
-    const cvB = parseInt(conversionsB);
+    const alpha = Number(confidenceLevel) / 100;
+    const inputs = [clicksA, conversionsA, clicksB, conversionsB];
+    const counts = inputs.map(Number);
+    const [cA, cvA, cB, cvB] = counts;
 
-    if (isNaN(cA) || isNaN(cvA) || isNaN(cB) || isNaN(cvB)) {
+    if (inputs.some((value) => value.trim() === '') || counts.some((value) => !Number.isFinite(value))) {
       setError('すべてのフィールドに有効な数値を入力してください。');
+      setResult(null);
+      return;
+    }
+
+    if (!counts.every(Number.isSafeInteger)) {
+      setError('試行回数と成功数は、9,007,199,254,740,991以下の整数を入力してください。');
+      setResult(null);
+      return;
+    }
+
+    if (cvA < 0 || cvB < 0) {
+      setError('成功数は0以上の整数を入力してください。');
       setResult(null);
       return;
     }
@@ -112,7 +93,13 @@ export default function ABTestCalculator() {
       Math.pow(cvB - expectedConvB, 2) / expectedConvB +
       Math.pow(nonConvB - expectedNonConvB, 2) / expectedNonConvB;
 
-    const pValue = 1 - chiSquareCDF(chiSquare, 1);
+    const pValue = chiSquareSurvival1(chiSquare);
+
+    if (!Number.isFinite(chiSquare) || !Number.isFinite(pValue) || pValue < 0 || pValue > 1) {
+      setError('計算結果を正しく求められませんでした。入力値を確認してください。');
+      setResult(null);
+      return;
+    }
 
     setResult({
       significant: pValue < alpha,
@@ -142,13 +129,13 @@ export default function ABTestCalculator() {
         path="/tools/ab-test/"
       >
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://tnishimaki.com/tools/" }, { "@type": "ListItem", "position": 3, "name": "A/B Test Calculator" }] }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "About", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Works", "item": "https://tnishimaki.com/works/" }, { "@type": "ListItem", "position": 3, "name": "A/B Test Calculator" }] }) }} />
       </SEO>
 
       <div>
         <header className="page-header">
           <div className="page-eyebrow">
-            <Link href="/tools/" style={{ color: 'inherit', textDecoration: 'none' }}>Tools</Link>
+            <Link href="/works/" style={{ color: 'inherit', textDecoration: 'none' }}>Works</Link>
             <span style={{ margin: '0 0.25rem' }}>/</span>
             <span>A/B Test Calculator</span>
           </div>
@@ -157,7 +144,7 @@ export default function ABTestCalculator() {
             2つの施策の結果について、統計的に有意な差があるかどうかブラウザ上で検定できます。A、Bそれぞれの「試行回数」と「成功数」を入力し、「計算」ボタンをクリックしてください。
           </p>
           <p className="page-description" style={{ marginTop: '0.75rem' }}>
-            検定手法はカイ二乗検定を採用しています。また有意水準は多くの場合95%を使用しますが、より厳密な結果を得たい場合は99%、やや緩い基準で良い場合は90%を選択してください。
+            検定手法はカイ二乗検定を採用しています。有意水準は一般的に5%を使用します。より厳しい判定基準にする場合は1%、より緩い判定基準にする場合は10%を、結果を見る前に選択してください。
           </p>
         </header>
 
@@ -278,9 +265,7 @@ export default function ABTestCalculator() {
                 <span className="ab-result-item-label">有意差</span>
                 <span className={`ab-result-item-value ${isCalculated && result ? (result.significant ? 'ab-significant' : 'ab-not-significant') : ''}`}>
                   {isCalculated && result
-                    ? (result.significant
-                        ? `あり（p=${result.pValue.toFixed(4)}）`
-                        : `なし（p=${result.pValue.toFixed(4)}）`)
+                    ? `${result.significant ? 'あり' : 'なし'}（${result.pValue < 0.0001 ? 'p<0.0001' : `p=${result.pValue.toFixed(4)}`}）`
                     : '-'}
                 </span>
               </div>
@@ -386,11 +371,11 @@ export default function ABTestCalculator() {
 
           {/* Back Link */}
           <div style={{ marginTop: '3rem' }}>
-            <Link href="/tools/" className="entry-link">
+            <Link href="/works/" className="entry-link">
               <svg viewBox="0 0 24 24" style={{ transform: 'rotate(180deg)' }}>
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              ツール一覧に戻る
+              Worksに戻る
             </Link>
           </div>
         </main>
