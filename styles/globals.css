@@ -120,6 +120,8 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 .about-page .service-card {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   padding: 2rem;
 }
@@ -133,6 +135,30 @@ body {
 .service-topics {
   color: var(--color-text-secondary);
   font-size: 0.875rem;
+}
+.service-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 0.3em;
+}
+.service-link:hover {
+  text-decoration-color: currentColor;
+}
+.service-link-primary {
+  flex-basis: 100%;
 }
 .section-subtitle {
   display: inline-block;

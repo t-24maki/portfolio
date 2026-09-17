@@ -101,11 +101,19 @@ export default function Home() {
               <article className="service-card" id="training">
                 <h3 className="service-title">講義・講演</h3>
                 <p className="service-description">統計学やデータ分析を現場で使える知識にするための講義・講演を行います。</p>
-                <p className="service-topics">【テーマ】<br />データリテラシー／統計解析による意思決定／データで判断する組織の作り方</p>
+                <p className="service-topics">【テーマ】<br />生成AI時代のデータリテラシー入門／統計解析に基づく意思決定の作法／データで判断する組織の作り方</p>
+                <div className="service-links" aria-label="講義・講演の実績とコンテンツ">
+                  <Link href="/media/#talks" className="service-link service-link-primary">登壇実績を見る <span aria-hidden="true">→</span></Link>
+                  <a href="https://www.youtube.com/@nishimaki/" className="service-link" target="_blank" rel="noopener noreferrer">YouTubeを見る <span aria-hidden="true">↗</span></a>
+                  <a href="https://www.udemy.com/course/excel_data/?referralCode=1E852BD09A70231F82FD" className="service-link" target="_blank" rel="noopener noreferrer">Udemyを見る <span aria-hidden="true">↗</span></a>
+                </div>
               </article>
               <article className="service-card" id="writing">
                 <h3 className="service-title">執筆・寄稿</h3>
                 <p className="service-description">統計学やデータ分析に関する記事・解説を、書籍・雑誌・Webメディア向けに執筆します。特に実践的なノウハウや、生成AI時代のデータ分析の考え方・学び方について読者層に合わせた文章で届けます。</p>
+                <div className="service-links" aria-label="執筆した記事">
+                  <a href="https://note.com/tnishimaki" className="service-link" target="_blank" rel="noopener noreferrer">noteで記事を読む <span aria-hidden="true">↗</span></a>
+                </div>
               </article>
             </div>
           </div>
