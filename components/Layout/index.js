@@ -7,21 +7,11 @@ import { YouTubeIcon, NoteIcon, LinkedInIcon } from '../Common/Icons';
 
 export default function Layout({ children }) {
   const router = useRouter();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuButton = useRef(null);
   const isActive = (item) => item.id === 'works'
     ? router.pathname === '/works' || router.pathname.startsWith('/tools/')
     : router.pathname === item.path.replace(/\/$/, '') || (item.id === 'about' && router.pathname === '/');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -29,10 +19,11 @@ export default function Layout({ children }) {
   }, [router.asPath]);
 
   useEffect(() => {
-    const desktop = window.matchMedia('(min-width: 901px)');
-    const closeOnDesktop = (event) => { if (event.matches) setMobileMenuOpen(false); };
-    desktop.addEventListener('change', closeOnDesktop);
-    return () => desktop.removeEventListener('change', closeOnDesktop);
+    // Keep this query in sync with the navigation breakpoint in globals.css.
+    const mobile = window.matchMedia('(max-width: 560px)');
+    const closeOnDesktop = (event) => { if (!event.matches) setMobileMenuOpen(false); };
+    mobile.addEventListener('change', closeOnDesktop);
+    return () => mobile.removeEventListener('change', closeOnDesktop);
   }, []);
 
   useEffect(() => {
@@ -69,12 +60,8 @@ export default function Layout({ children }) {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        background: isScrolled
-          ? 'var(--color-bg)'
-          : 'linear-gradient(to bottom, var(--color-bg) 60%, transparent 100%)',
-        transition: 'background 0.3s ease',
       }}>
-        <Link href="/" className="nav-logo">T. Nishimaki</Link>
+        <Link href="/" className="nav-logo">Takuma Nishimaki</Link>
         <ul className="nav-links">
           {menuItems.map((item) => (
             <li key={item.id}><Link href={item.path} aria-current={isActive(item) ? 'page' : undefined}>{item.label}</Link></li>

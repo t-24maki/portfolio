@@ -132,13 +132,11 @@ export default function ABTestCalculator() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "About", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Works", "item": "https://tnishimaki.com/works/" }, { "@type": "ListItem", "position": 3, "name": "A/B Test Calculator" }] }) }} />
       </SEO>
 
-      <div>
+      <div className="tool-page tool-page--ab-test">
         <header className="page-header">
-          <div className="page-eyebrow">
-            <Link href="/works/" style={{ color: 'inherit', textDecoration: 'none' }}>Works</Link>
-            <span style={{ margin: '0 0.25rem' }}>/</span>
-            <span>A/B Test Calculator</span>
-          </div>
+          <nav className="tool-breadcrumb" aria-label="作品一覧へ">
+            <Link href="/works/"><span aria-hidden="true">←</span> Works</Link>
+          </nav>
           <h1 className="page-title">A/B Test Calculator</h1>
           <p className="page-description">
             2つの施策の結果について、統計的に有意な差があるかどうかブラウザ上で検定できます。A、Bそれぞれの「試行回数」と「成功数」を入力し、「計算」ボタンをクリックしてください。
@@ -148,7 +146,7 @@ export default function ABTestCalculator() {
           </p>
         </header>
 
-        <main className="content-section">
+        <div className="content-section">
           <div className="calc-layout">
             {/* Calculator */}
             <div className="calc-card">
@@ -378,7 +376,7 @@ export default function ABTestCalculator() {
               Worksに戻る
             </Link>
           </div>
-        </main>
+        </div>
       </div>
     </>
   );

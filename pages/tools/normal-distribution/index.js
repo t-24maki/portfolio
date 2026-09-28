@@ -162,20 +162,18 @@ export default function NormalDistributionGraphMaker() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "About", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Works", "item": "https://tnishimaki.com/works/" }, { "@type": "ListItem", "position": 3, "name": "Normal Distribution Graph Maker" }] }) }} />
       </SEO>
 
-      <div>
+      <div className="tool-page tool-page--normal-distribution">
         <header className="page-header">
-          <div className="page-eyebrow">
-            <Link href="/works/" style={{ color: 'inherit', textDecoration: 'none' }}>Works</Link>
-            <span style={{ margin: '0 0.25rem' }}>/</span>
-            <span>Normal Distribution Graph Maker</span>
-          </div>
+          <nav className="tool-breadcrumb" aria-label="作品一覧へ">
+            <Link href="/works/"><span aria-hidden="true">←</span> Works</Link>
+          </nav>
           <h1 className="page-title">Normal Distribution Graph Maker</h1>
           <p className="page-description">
             任意の正規分布（ガウス分布）の曲線を作成し、曲線部分の背景透過画像(png)をダウンロードできます。資料用の図の作成など、ご自由にお使いください。
           </p>
         </header>
 
-        <main className="content-section">
+        <div className="content-section">
           <div className="calc-layout">
             {/* Settings */}
             <div className="calc-card">
@@ -337,7 +335,7 @@ export default function NormalDistributionGraphMaker() {
               Worksに戻る
             </Link>
           </div>
-        </main>
+        </div>
       </div>
     </>
   );

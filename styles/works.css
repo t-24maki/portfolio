@@ -1,0 +1,512 @@
+/* The Works gallery and its tools share the book-inspired About typography. */
+.works-page .page-header,
+.tool-page .page-header {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.works-page .page-title,
+.tool-page .page-title {
+  font-size: clamp(2.5rem, 4.4vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+
+.works-page .page-description,
+.tool-page .page-description {
+  max-width: 54rem;
+  line-height: 1.9;
+}
+
+.tool-breadcrumb a {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 0.25em;
+}
+
+.works-filter-bar {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.works-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.works-filter {
+  min-height: 44px;
+  padding: 0.6rem 0.875rem;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.works-filter:hover {
+  border-color: var(--color-accent);
+}
+
+.works-filter[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-surface);
+}
+
+.works-result-count {
+  margin-top: 0.875rem;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+}
+
+.work-tags li {
+  padding: 0.2rem 0.5rem;
+  background: var(--color-surface-alt);
+  color: var(--color-accent);
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.works-page .tools-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 2.5rem;
+}
+
+.works-page .work-card {
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  overflow: visible;
+  transition: border-color 0.2s ease;
+}
+
+.works-page .work-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.works-page .work-card--linked:hover {
+  border-color: var(--color-accent);
+}
+
+.work-card-primary {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* One primary link covers the card; store and research links remain separate. */
+.work-card-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.work-card-primary:focus-visible {
+  outline: none; /* The existing :focus-within outline surrounds the whole card. */
+}
+
+.work-card-actions {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.work-related-link,
+.works-page .tool-store-link {
+  position: relative;
+  z-index: 2;
+}
+
+.work-related-link {
+  align-self: flex-start;
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 0.25em;
+}
+
+.works-page .work-card-preview {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border-subtle);
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.works-page .work-card-image {
+  transition: none;
+}
+
+.works-page .work-card:hover .work-card-image {
+  transform: none;
+}
+
+.works-page .work-card-content {
+  padding: 1.25rem 0 1.5rem;
+}
+
+.works-page .work-card .tool-card-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-wrap: auto;
+  margin-bottom: 0.75rem;
+}
+
+.works-page .work-card--linked:hover .work-card-primary {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.works-page .tool-card-description {
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 0;
+}
+
+.works-page .tool-card-cta,
+.works-page .tool-card-store-links {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: 0;
+  color: var(--color-accent);
+  font-size: 0.9375rem;
+}
+
+.works-page .tool-store-link {
+  min-height: 44px;
+  color: var(--color-accent);
+  border-color: var(--color-border);
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+}
+
+.tool-breadcrumb {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.tool-breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tool-page--cocyclic .page-title {
+  font-family: var(--font-body);
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* Forms use sans serif labels and tabular numbers, while the prose stays serif. */
+.tool-page .calc-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.tool-page .calc-card,
+.tool-page .calc-result-card {
+  min-width: 0;
+  padding: 1.75rem;
+  border-color: var(--color-border);
+  font-family: var(--font-ui);
+  font-weight: 400;
+}
+
+.tool-page .calc-result-card {
+  background: var(--color-surface-alt);
+}
+
+.tool-page .calc-card-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-color: var(--color-border);
+}
+
+.tool-page .calc-card-title {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.tool-page .calc-label,
+.tool-page .calc-result-label,
+.tool-page .ab-result-item-label,
+.tool-page .ab-chart-title {
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  letter-spacing: 0;
+}
+
+.tool-page .calc-label-row {
+  position: relative;
+}
+
+.tool-page .calc-tooltip-wrapper {
+  position: static;
+}
+
+.tool-page .calc-tooltip-content {
+  width: min(260px, 100%);
+  left: 0;
+  transform: none;
+}
+
+.tool-page .calc-tooltip-content::after {
+  display: none;
+}
+
+.tool-page .calc-input {
+  min-height: 48px;
+  font-size: 1rem;
+  border-color: var(--color-border);
+  background: var(--color-surface);
+}
+
+.tool-page .calc-input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.tool-page .nd-select {
+  font-family: var(--font-ui);
+}
+
+.tool-page .calc-input-unit,
+.tool-page .calc-result-unit {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+}
+
+.tool-page .calc-button,
+.tool-page .nd-download-btn,
+.tool-page .cocyclic-btn {
+  min-height: 46px;
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  letter-spacing: 0;
+}
+
+.tool-page .calc-button,
+.tool-page .nd-download-full,
+.tool-page .cocyclic-btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-surface);
+}
+
+.tool-page .calc-button:hover,
+.tool-page .nd-download-full:not(:disabled):hover,
+.tool-page .cocyclic-btn-primary:not(:disabled):hover {
+  background: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+  color: var(--color-surface);
+}
+
+.tool-page .calc-result-value {
+  font-family: var(--font-mono);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.tool-page .calc-result-summary {
+  border-color: var(--color-border);
+}
+
+.tool-page .calc-summary-label,
+.tool-page .calc-summary-value {
+  font-size: 0.875rem;
+}
+
+.tool-page .ab-group {
+  padding: 1rem;
+}
+
+.tool-page .ab-group-fields {
+  min-width: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tool-page .ab-radio-text {
+  font-size: 0.9375rem;
+}
+
+.tool-page .ab-radio-input:checked + .ab-radio-text {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.tool-page .ab-radio-input:focus-visible + .ab-radio-text {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  position: relative;
+  z-index: 1;
+}
+
+.tool-page .ab-result-item {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.tool-page .ab-result-item-value {
+  font-family: var(--font-body);
+  font-size: 1.75rem;
+  line-height: 1.5;
+}
+
+.tool-page .ab-significant { color: #286344; }
+.tool-page .ab-not-significant { color: #a33429; }
+.tool-page .ab-chart-bar-a { background: var(--color-accent); }
+
+.tool-page .nd-canvas {
+  height: auto !important; /* The drawing buffer's fixed size must keep its aspect ratio. */
+  aspect-ratio: 3 / 2;
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.tool-page .nd-canvas-note,
+.tool-page .cocyclic-note {
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+/* Article headings and left edges follow the same single-column rhythm as About. */
+.tool-page .calc-description .category {
+  margin-bottom: 2.5rem;
+}
+
+.tool-page .category-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+}
+
+.tool-page .category-title {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+.tool-page .calc-description-content {
+  max-width: 54rem;
+  font-size: 1rem;
+  line-height: 1.95;
+}
+
+.tool-page .calc-ordered-list li,
+.tool-page .calc-param-desc {
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.tool-page .calc-formula {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.tool-page .cocyclic-main {
+  align-items: flex-start;
+}
+
+.tool-page .cocyclic-board {
+  flex-shrink: 0;
+  background: #eddfc2;
+}
+
+.tool-page .cocyclic-line-h,
+.tool-page .cocyclic-line-v {
+  background: #73624c;
+  opacity: 0.8;
+}
+
+.tool-page .cocyclic-controls {
+  border-color: var(--color-border);
+  font-family: var(--font-ui);
+  font-weight: 400;
+}
+
+.tool-page .cocyclic-message {
+  font-size: 0.875rem;
+}
+
+.tool-page .cocyclic-example {
+  width: 28rem;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+}
+
+@media (max-width: 900px) {
+  .tool-page .calc-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tool-page .cocyclic-main {
+    flex-direction: column;
+  }
+
+  .tool-page .cocyclic-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 428px;
+  }
+
+  .tool-page .cocyclic-stone-count,
+  .tool-page .cocyclic-message {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .works-page .page-header,
+  .tool-page .page-header {
+    padding-top: 1.75rem;
+    padding-bottom: 2rem;
+  }
+
+  .works-page .tools-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tool-page .calc-card,
+  .tool-page .calc-result-card { padding: 1.25rem; }
+
+  .tool-page .category-title { font-size: 1.25rem; }
+  .tool-page .cocyclic-main { overflow-x: auto; }
+}
+
+@media (max-width: 380px) {
+  .tool-page .ab-group-fields { grid-template-columns: minmax(0, 1fr); }
+  .tool-page .nd-download-buttons { grid-template-columns: minmax(0, 1fr); }
+}

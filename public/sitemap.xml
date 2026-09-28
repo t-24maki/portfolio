@@ -5,16 +5,12 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tnishimaki.com/media/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tnishimaki.com/research/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://tnishimaki.com/works/</loc>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tnishimaki.com/tools/overfitting/</loc>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tnishimaki.com/tools/sample-size/</loc>

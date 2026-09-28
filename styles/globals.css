@@ -2,21 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
 :root {
-  --color-bg: #f7f7f5;
-  --color-surface: #ffffff;
-  --color-surface-alt: #f0f0ed;
-  --color-border: #e0e0dc;
-  --color-border-subtle: #eaeae6;
-  --color-text-primary: #1a1a1a;
-  --color-text-secondary: #5c5c5c;
-  --color-text-tertiary: #8a8a8a;
-  --color-accent: #2a2a2a;
-  --font-display: 'Cormorant Garamond', serif;
-  --font-body: 'Noto Sans JP', sans-serif;
+  --color-bg: #faf7f2;
+  --color-surface: #fffdf9;
+  --color-surface-alt: #f0e9df;
+  --color-border: #dcd2c6;
+  --color-border-subtle: #e9e1d7;
+  --color-text-primary: #302a25;
+  --color-text-secondary: #51453b;
+  --color-text-tertiary: #6d6055;
+  --color-accent: #765134;
+  --color-link-underline: #b4a18e;
+  --font-display: 'Cormorant Garamond', 'Noto Serif JP', serif;
+  --font-body: 'Noto Serif JP', 'Yu Mincho', serif;
+  --font-ui: 'Noto Sans JP', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
+  --about-font-weight: 500;
+  --heading-font-weight: 600;
+  --name-font-weight: 500;
   --content-width: 1104px;
   --page-gutter: 3rem;
   --page-inset: max(var(--page-gutter), calc((100% - var(--content-width)) / 2));
@@ -38,7 +41,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
   line-height: 1.7;
-  font-weight: 300;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -53,8 +56,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, var(--color-bg) 60%, transparent 100%);
-  transition: background 0.3s ease;
+  background: var(--color-bg);
 }
 
 .nav-actions {
@@ -438,11 +440,13 @@ body {
 }
 
 .nav-logo {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: var(--color-text-secondary);
-  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-size: var(--nav-logo-size, 1.75rem);
+  font-weight: var(--name-font-weight, 400);
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: var(--color-text-primary);
+  white-space: nowrap;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -1423,8 +1427,18 @@ body {
     padding: 1rem var(--page-inset);
   }
 
-  .nav-links,
+  .nav-logo {
+    font-size: var(--nav-logo-mobile-size, 1.5rem);
+  }
+
   .nav-social {
+    display: none;
+  }
+}
+
+/* Two-link menu: keep this breakpoint in sync with Layout's matchMedia query. */
+@media (max-width: 560px) {
+  .nav-links {
     display: none;
   }
 
@@ -2688,9 +2702,6 @@ a.service-card:hover {
     flex: 1;
   }
 
-  .cocyclic-board {
-    padding: 16px !important;
-  }
 }
 
 .site-footer {
@@ -2754,6 +2765,34 @@ a.service-card:hover {
   .research-table, .media-table { table-layout: auto; }
   .research-table colgroup, .media-table colgroup { display: none; }
   .entry-action-links { margin-left: 0; }
+}
+
+@media (max-width: 480px) {
+  .site-nav {
+    gap: 0.5rem;
+  }
+  .nav-actions {
+    gap: 0.5rem;
+  }
+  .nav-contact span {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-logo {
+    font-size: var(--nav-logo-small-size, 1.25rem);
+  }
+  .nav-contact {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .nav-logo {
+    font-size: var(--nav-logo-narrow-size, 1.125rem);
+  }
 }
 
 /* Reveal content in document order, including descriptions, links and icons. */

@@ -1,16 +1,24 @@
 import Head from 'next/head';
+import { works } from '../../data/works';
 
 const BASE_URL = 'https://tnishimaki.com';
 const DEFAULT_DESCRIPTION = 'データ利活用支援や研修講師を行う独立統計家／データサイエンティストです。';
 const DEFAULT_KEYWORDS =
   'データサイエンティスト,データサイエンス,統計家,AI,機械学習,統計学,分子系統学,Python,Excel,データ分析,教育';
 const TWITTER_HANDLE = '@t_nsmk';
+const DEFAULT_IMAGE = {
+  path: '/images/site-image.jpg',
+  width: 3000,
+  height: 1688,
+  alt: '西巻 拓真 / Takuma Nishimaki',
+  type: 'image/jpeg',
+};
 
 /**
  * Centralized SEO / meta handling for all pages.
  *
  * Per-page meta (title, description, canonical, OGP, Twitter, structured data)
- * is rendered here. Site-wide tags (og:image, og:site_name, favicon, fonts,
+ * is rendered here. Site-wide tags (og:site_name, favicon, fonts,
  * viewport) live in _document.js / _app.js.
  *
  * @param {string}  title        Page <title> and og/twitter title.
@@ -29,6 +37,8 @@ export default function SEO({
   children,
 }) {
   const url = `${BASE_URL}${path}`;
+  const image = works.find(work => work.href === path)?.shareImage || DEFAULT_IMAGE;
+  const imageUrl = `${BASE_URL}${image.path}`;
 
   return (
     <Head>
@@ -41,6 +51,11 @@ export default function SEO({
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <meta property="og:locale" content="ja_JP" />
+      <meta property="og:image" content={imageUrl} />
+      <meta property="og:image:width" content={String(image.width)} />
+      <meta property="og:image:height" content={String(image.height)} />
+      <meta property="og:image:alt" content={image.alt} />
+      <meta property="og:image:type" content={image.type} />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -48,6 +63,8 @@ export default function SEO({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:site" content={TWITTER_HANDLE} />
       <meta name="twitter:creator" content={TWITTER_HANDLE} />
+      <meta name="twitter:image" content={imageUrl} />
+      <meta name="twitter:image:alt" content={image.alt} />
 
       {/* Misc */}
       <meta name="keywords" content={keywords} />

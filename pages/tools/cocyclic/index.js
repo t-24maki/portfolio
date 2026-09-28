@@ -1,11 +1,11 @@
 // pages/tools/cocyclic/index.js
 import SEO from '../../../components/Common/SEO';
 import Link from 'next/link';
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 
 const BOARD_SIZE = 9;
 const PREFERRED_CELL_SIZE = 40;
-const MIN_CELL_SIZE = 30;
+const MIN_CELL_SIZE = 26;
 
 function areCollinear(p1, p2, p3) {
   const area = (p1.x * (p2.y - p3.y) + p2.x * (p3.y - p1.y) + p3.x * (p1.y - p2.y)) / 2;
@@ -118,15 +118,24 @@ export default function CocyclicGame() {
   const [shapes, setShapes] = useState([]);
   const [history, setHistory] = useState([]);
   const [cellSize, setCellSize] = useState(PREFERRED_CELL_SIZE);
+  const [boardPadding, setBoardPadding] = useState(32);
   const containerRef = useRef(null);
 
-  const boardPadding = 32;
   const totalBoardSize = BOARD_SIZE * cellSize + boardPadding * 2;
+
+  // Reposition the overlay with the board when the viewport changes mid-game.
+  const displayShapes = useMemo(() => shapes.map((shape) => (
+    shape.type === 'circle'
+      ? { ...shape, ...findCircleFromPoints(shape.points, cellSize, boardPadding) }
+      : { ...shape, line: findLineFromPoints(shape.points, cellSize, boardPadding) }
+  )), [shapes, cellSize, boardPadding]);
 
   const updateCellSize = useCallback(() => {
     if (containerRef.current) {
-      const containerWidth = containerRef.current.clientWidth - 128;
-      const calculated = Math.floor(containerWidth / BOARD_SIZE);
+      const containerWidth = containerRef.current.clientWidth;
+      const padding = containerWidth <= 480 ? 16 : 32;
+      const calculated = Math.floor((containerWidth - padding * 2 - 2) / BOARD_SIZE);
+      setBoardPadding(padding);
       setCellSize(Math.max(Math.min(calculated, PREFERRED_CELL_SIZE), MIN_CELL_SIZE));
     }
   }, []);
@@ -152,7 +161,7 @@ export default function CocyclicGame() {
     setStoneCount(newStoneCount);
     setShapes(result.shapes);
     setGameOver(result.gameOver);
-  }, [board, stoneCount, gameOver, shapes, cellSize]);
+  }, [board, stoneCount, gameOver, shapes, cellSize, boardPadding]);
 
   const undoMove = useCallback(() => {
     if (history.length === 0) return;
@@ -190,13 +199,11 @@ export default function CocyclicGame() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "About", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Works", "item": "https://tnishimaki.com/works/" }, { "@type": "ListItem", "position": 3, "name": "共円 (Cocyclic)" }] }) }} />
       </SEO>
 
-      <div>
+      <div className="tool-page tool-page--cocyclic">
         <header className="page-header">
-          <div className="page-eyebrow">
-            <Link href="/works/" style={{ color: 'inherit', textDecoration: 'none' }}>Works</Link>
-            <span style={{ margin: '0 0.25rem' }}>/</span>
-            <span>Cocyclic</span>
-          </div>
+          <nav className="tool-breadcrumb" aria-label="作品一覧へ">
+            <Link href="/works/"><span aria-hidden="true">←</span> Works</Link>
+          </nav>
           <h1 className="page-title">「共円」で遊んでみよう</h1>
           <p className="page-description">
             碁盤に石を1つずつ置いてゆき、任意の4つの石が同一円周上に配置されてしまったら終わりというゲームです。一直線上に4つ置かれた場合も「半径無限の円周上の4点」とみなされNGになります。
@@ -206,7 +213,7 @@ export default function CocyclicGame() {
           </p>
         </header>
 
-        <main className="content-section">
+        <div className="content-section">
           <div className="cocyclic-wrapper" ref={containerRef}>
             <div className="cocyclic-main">
             {/* Board */}
@@ -252,6 +259,7 @@ export default function CocyclicGame() {
                       {/* Intersection button */}
                       <button
                         className="cocyclic-intersection"
+                        aria-label={`${row + 1}行${col + 1}列${board[i] ? '（石あり）' : ''}`}
                         style={{ width: stoneSize, height: stoneSize }}
                         onClick={() => handleClick(i)}
                         disabled={gameOver && !board[i]}
@@ -280,7 +288,7 @@ export default function CocyclicGame() {
                   pointerEvents: 'none',
                 }}
               >
-                {shapes.map((shape, idx) =>
+                {displayShapes.map((shape, idx) =>
                   shape.type === 'circle' ? (
                     <circle
                       key={idx}
@@ -348,7 +356,7 @@ export default function CocyclicGame() {
                   ちなみに長方形、等脚台形でなくても共円となってしまう組み合わせは無数に存在します。色々と考えてみましょう。
                 </p>
                 <div style={{ marginTop: '1.5rem' }}>
-                  <img src="/images/kyoen1.png" alt="共円の基本的な考え方" style={{ maxWidth: '50%', height: 'auto', borderRadius: '8px' }} />
+                  <img src="/images/kyoen1.png" alt="共円の基本的な考え方" className="cocyclic-example" />
                 </div>
               </div>
             </div>
@@ -362,7 +370,7 @@ export default function CocyclicGame() {
                   共円を作らずにいくつ石を置けるか検証したところ、17個まで置けました。もしこれ以上石を置けたら教えてください。
                 </p>
                 <div style={{ marginTop: '1.5rem' }}>
-                  <img src="/images/kyoen2.png" alt="作者の記録" style={{ maxWidth: '50%', height: 'auto', borderRadius: '8px' }} />
+                  <img src="/images/kyoen2.png" alt="作者の記録" className="cocyclic-example" />
                 </div>
               </div>
             </div>
@@ -377,7 +385,7 @@ export default function CocyclicGame() {
               Worksに戻る
             </Link>
           </div>
-        </main>
+        </div>
       </div>
     </>
   );

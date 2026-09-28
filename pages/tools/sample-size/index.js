@@ -90,14 +90,12 @@ export default function SampleSizeCalculator() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "About", "item": "https://tnishimaki.com/" }, { "@type": "ListItem", "position": 2, "name": "Works", "item": "https://tnishimaki.com/works/" }, { "@type": "ListItem", "position": 3, "name": "Sample Size Calculator" }] }) }} />
       </SEO>
 
-      <div>
+      <div className="tool-page tool-page--sample-size">
         {/* Breadcrumb */}
         <header className="page-header">
-          <div className="page-eyebrow">
-            <Link href="/works/" style={{ color: 'inherit', textDecoration: 'none' }}>Works</Link>
-            <span style={{ margin: '0 0.25rem' }}>/</span>
-            <span>Sample Size Calculator</span>
-          </div>
+          <nav className="tool-breadcrumb" aria-label="作品一覧へ">
+            <Link href="/works/"><span aria-hidden="true">←</span> Works</Link>
+          </nav>
           <h1 className="page-title">Sample Size Calculator</h1>
           <p className="page-description">
             統計学的に充分となるアンケート調査人数をブラウザ上で計算できます。「全体数」に全対象者人数を入れ、「計算」ボタンをクリックして下さい。
@@ -107,7 +105,7 @@ export default function SampleSizeCalculator() {
           </p>
         </header>
 
-        <main className="content-section">
+        <div className="content-section">
           <div className="calc-layout">
             {/* Calculator */}
             <div className="calc-card">
@@ -381,7 +379,7 @@ export default function SampleSizeCalculator() {
               Worksに戻る
             </Link>
           </div>
-        </main>
+        </div>
       </div>
     </>
   );
