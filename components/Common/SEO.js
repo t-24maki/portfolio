@@ -26,6 +26,7 @@ const DEFAULT_IMAGE = {
  * @param {string}  path         Path with leading slash, e.g. "/tools/". Builds canonical + og:url.
  * @param {string}  keywords     Optional keywords override.
  * @param {boolean} noindex      When true, emit noindex and skip canonical.
+ * @param {object} shareImage    Optional page-specific image (path, width, height, type, alt).
  * @param {React.ReactNode} children  Page-specific head tags (JSON-LD, stylesheets).
  */
 export default function SEO({
@@ -34,10 +35,11 @@ export default function SEO({
   path = '',
   keywords = DEFAULT_KEYWORDS,
   noindex = false,
+  shareImage,
   children,
 }) {
   const url = `${BASE_URL}${path}`;
-  const image = works.find(work => work.href === path)?.shareImage || DEFAULT_IMAGE;
+  const image = shareImage || works.find(work => work.href === path)?.shareImage || DEFAULT_IMAGE;
   const imageUrl = `${BASE_URL}${image.path}`;
 
   return (

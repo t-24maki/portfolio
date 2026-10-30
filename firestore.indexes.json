@@ -1,0 +1,10 @@
+{
+  "indexes": [{
+    "collectionGroup": "scores", "queryScope": "COLLECTION",
+    "fields": [
+      { "fieldPath": "scoreUnits", "order": "DESCENDING" },
+      { "fieldPath": "achievedAt", "order": "ASCENDING" }
+    ]
+  }],
+  "fieldOverrides": []
+}
