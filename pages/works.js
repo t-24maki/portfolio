@@ -33,7 +33,7 @@ function WorkCard({ work }) {
       aria-labelledby={`work-title-${work.id}`}
     >
       <div className={`work-card-preview work-card-preview--${work.id}`}>
-        <Image src={`/images/works/${image.file}`} alt={image.alt} width={image.width} height={image.height} className="work-card-image" />
+        <Image src={image.path || `/images/works/${image.file}`} alt={image.alt} width={image.width} height={image.height} className="work-card-image" />
       </div>
       <div className="work-card-content">
         <ul className="work-tags" aria-label="作品の分類">

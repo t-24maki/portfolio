@@ -20,7 +20,7 @@ export default function Layout({ children }) {
 
   useEffect(() => {
     // Keep this query in sync with the navigation breakpoint in globals.css.
-    const mobile = window.matchMedia('(max-width: 560px)');
+    const mobile = window.matchMedia('(max-width: 680px)');
     const closeOnDesktop = (event) => { if (!event.matches) setMobileMenuOpen(false); };
     mobile.addEventListener('change', closeOnDesktop);
     return () => mobile.removeEventListener('change', closeOnDesktop);

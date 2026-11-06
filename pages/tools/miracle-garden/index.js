@@ -132,8 +132,7 @@ export default function MiracleGarden() {
   const openRanking = () => { setRankingOpen(true); rankingRef.current?.showModal(); };
   const remaining = config.experimentLimit - (game?.experiments.length || 0);
   return <>
-    <SEO title={`${config.title}｜ためして育てるガーデンゲーム`} description="花に水と肥料をあげて、育ち方をくらべるブラウザゲーム。" path="/tools/miracle-garden/" noindex
-      shareImage={{ path: '/images/og/data-garden-v3.png', width: 1200, height: 630, type: 'image/png', alt: 'データの庭。芽と光のロゴ、3本のコスモス、散布図を描いた紹介画像' }} />
+    <SEO title={`${config.title}｜ためして育てるガーデンゲーム`} description="花に水と肥料をあげて、育ち方をくらべるブラウザゲーム。" path="/tools/miracle-garden/" />
     <div className={`${styles.game} ${phase === 'experiment' ? styles.experimentMode : styles.finalMode}`} style={{ '--grow-duration': `${config.animationMs * .75}ms` }}>
       <header className={styles.header}>
         <div className={styles.brand}><span className={styles.brandMark}><GardenEmblem /></span><h1>{config.titleRuby && config.title.endsWith(config.titleRuby.text) ? <>{config.title.slice(0, -config.titleRuby.text.length)}<ruby>{config.titleRuby.text}<rt>{config.titleRuby.reading}</rt></ruby></> : config.title}</h1></div>

@@ -76,7 +76,7 @@ export default function Home() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       </SEO>
 
-      <div className={styles.page}>
+      <div className={`${styles.page} reveal-page`}>
         <header className={styles.profile} aria-labelledby="about-title">
           <h1 className={styles.name} id="about-title">
             Takuma Nishimaki<span>西巻 拓真</span>
@@ -91,7 +91,7 @@ export default function Home() {
           </div>
           <div className={styles.bio}>
             <p>SIer・コンサルティングファームにおける10年超の実務経験と、博士課程でのデータ解析研究を背景に、企業・大学向けのデータ利活用支援や人材育成に取り組んでいます。講義講演や<a href="https://www.youtube.com/@nishimaki/" target="_blank" rel="noopener noreferrer">YouTube</a>/<a href="https://note.com/tnishimaki" target="_blank" rel="noopener noreferrer">note</a>を通じて、統計学やデータ分析の考え方を発信しています。</p>
-            <p>データドリブンな意思決定支援を行う合同会社propの代表、AI日報・分析システム開発を行う<a href="https://visionvoice.co.jp/" target="_blank" rel="noopener noreferrer">VisionVoice株式会社</a>の執行役員CTOを務めています。</p>
+            <p>データドリブンな意思決定支援を行う<Link href="/prop/">合同会社prop</Link>の代表、AI日報・分析システム開発を行う<a href="https://visionvoice.co.jp/" target="_blank" rel="noopener noreferrer">VisionVoice株式会社</a>の執行役員CTOを務めています。</p>
           </div>
         </header>
 

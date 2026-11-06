@@ -1,0 +1,127 @@
+.page {
+  padding-bottom: 2rem;
+}
+
+.introduction {
+  padding: 2.5rem 0 1.25rem;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-family: var(--font-body);
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  font-weight: var(--name-font-weight, 500);
+  line-height: 1.5;
+}
+
+.title span {
+  display: inline-block;
+}
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 6vw, 4rem);
+  max-width: 44rem;
+  padding-block: 0.5rem;
+}
+
+.logoVariant {
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.logoArtwork {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+}
+
+.logoVariant figcaption {
+  margin-top: 0.75rem;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.brandIcon,
+.brandWordmark {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.brandIcon {
+  width: 5rem;
+}
+
+.brandWordmark {
+  width: 15rem;
+}
+
+.introText {
+  color: var(--color-text-secondary);
+}
+
+.introText p + p {
+  margin-top: 0.5rem;
+}
+
+.section {
+  padding: 1.25rem 0;
+}
+
+.list {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.list li + li {
+  margin-top: 0.25rem;
+}
+
+.clientNote {
+  margin-top: 0.5rem;
+  color: var(--color-text-tertiary);
+  font-size: 0.75rem;
+}
+
+.companyInfo > div {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.companyInfo > div:first-child {
+  padding-top: 0;
+}
+
+.companyInfo dt {
+  color: var(--color-text-secondary);
+}
+
+.companyInfo dd {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  .logoArtwork {
+    height: 5rem;
+  }
+
+  .brandIcon {
+    width: 3.5rem;
+  }
+
+  .introduction {
+    padding-top: 1.75rem;
+  }
+
+  .companyInfo > div {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+}

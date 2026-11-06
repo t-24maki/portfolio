@@ -18,6 +18,7 @@
   media/index.html
   research/index.html
   works/index.html
+  prop/index.html
   services/index.html
   contact/index.html
   education/index.html
@@ -25,6 +26,7 @@
   publications/index.html
   tools/index.html
   tools/overfitting/index.html
+  tools/miracle-garden/index.html
   tools/sample-size/index.html
   tools/ab-test/index.html
   tools/normal-distribution/index.html
@@ -42,7 +44,7 @@ ZIPを使う場合はローカルで解凍し、その中身をアップロー�
 
 1. 現在の公開ファイルをローカルにバックアップします。サーバー固有の `.htaccess`、認証・証明書用のファイルなども保存してください。
 2. 新しい `out/_next/` と `out/images/`、その他の画像・静的ファイルを先にアップロードします。ディレクトリを結合し、同名ファイルを上書きします。**既存の `_next/` を先に削除しないでください。** 更新途中の旧HTMLや、開いたままの旧ページが旧ファイルを参照することがあります。
-3. `works/` と、下表の旧ページ・個別ツールのHTMLをアップロードします。`media/` と `research/` も新しい移動案内のHTMLで上書きします。
+3. `works/`、`prop/` と、下表の旧ページ・個別ツールのHTMLをアップロードします。`tools/miracle-garden/` が「データの庭」です。`media/` と `research/` も新しい移動案内のHTMLで上書きします。
 4. トップページの `index.html` を上書きし、`sitemap.xml`、`robots.txt`、404ページなど残りの `out/` のファイルもアップロードします。FileZillaの転送失敗一覧が空であることを確認します。
 5. ブラウザを再読み込みして下記の公開後確認を行います。
 
@@ -67,19 +69,22 @@ ZIPを使う場合はローカルで解凍し、その中身をアップロー�
 
 `/media/#talks`、`/media/#press` はAbout内の同名の項目へ、`/media/#courses` は `/#channels` へ移動します。`/research/#papers`、`/research/#presentations` もAbout内の該当項目へ移動します。
 
-**`tools/` フォルダごとは削除しないでください。** `tools/index.html` は移動案内になりますが、その配下の5つの個別ツールは引き続き使用します。
+**`tools/` フォルダごとは削除しないでください。** `tools/index.html` は移動案内になりますが、その配下の6つの個別ツールは引き続き使用します。
 
 旧8ページは `noindex, follow` と移動先のcanonicalを設定済みで、新しいサイトマップから除外しています。現在の自動移動はJavaScriptによるもので、サーバーのHTTP 301転送ではありません。JavaScriptが無効な場合も移動先のリンクを表示します。
 
 ## 公開後の確認
 
-- `/`、`/works/` を直接開き、再読み込みして表示されること。PC・スマートフォンのメニューがAbout／Worksになっていること。
+- `/`、`/works/`、`/prop/` を直接開き、再読み込みして表示されること。PC・スマートフォンのメニューがAbout／Works／合同会社propになっていること。
 - Aboutに支援テーマ・メディア実績・研究実績がまとまっていること、Worksの画像と分類フィルターが使えること、お問い合わせのメールリンクが開くこと。
 - 上表の旧URLから新ページへ移動すること。
 - `/tools/ab-test/` でA：試行100000・成功10000、B：試行100000・成功20000を入力すると「あり（p<0.0001）」となること。
 - `/tools/overfitting/` で単純・中程度・複雑を切り替えると、同じ点に対して予測曲線と誤差が変わること。Worksの「データ・統計」に含まれること。
-- `/sitemap.xml` が2つの主要ページと5つの個別ツールを掲載していること。
+- Worksの「データ・統計」に「データの庭」があり、紹介画像とリンクが表示されること。`/tools/miracle-garden/` を直接開き、水・肥料を変えて花を育てられること。
+- データの庭の「あそびかた」「解説」「ランキング」が開くこと。ランキングは既存のFirebaseプロジェクト `data-garden-game` を使用します。ゲーム設定とルールを変更していない場合、今回の静的サイト更新だけでルールを再デプロイする必要はありません。
+- `/sitemap.xml` が3つの主要ページと6つの個別ツールを掲載していること。データの庭のrobotsが `index, follow`、canonicalが `https://tnishimaki.com/tools/miracle-garden/` であること。
 - `/images/og/overfitting.jpg`、`sample-size.jpg`、`ab-test.jpg`、`normal-distribution.jpg`、`cocyclic.jpg` が表示されること（いずれも `/images/og/` 配下）。5つのツールページの共有画像はそれぞれの画像を指定しています。
 - 過学習シミュレータのページタイトルが「過学習シミュレータ｜オーバーフィッティングをグラフで理解」であること。
+- `/images/og/data-garden-v3.png` が表示され、データの庭のSNS共有画像に指定されていること。`images/miracle-garden/` と `images/prop/` もアップロード対象です。
 
 表示が古い場合はブラウザのキャッシュを避けて再読み込みし、サーバーやCDNのキャッシュがある場合は、その設定に応じて更新してください。

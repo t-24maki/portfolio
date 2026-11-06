@@ -459,6 +459,8 @@ body {
   display: flex;
   gap: 2.5rem;
   list-style: none;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .nav-links a {
@@ -1434,10 +1436,14 @@ body {
   .nav-social {
     display: none;
   }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
 }
 
-/* Two-link menu: keep this breakpoint in sync with Layout's matchMedia query. */
-@media (max-width: 560px) {
+/* Three-link menu: keep this breakpoint in sync with Layout's matchMedia query. */
+@media (max-width: 680px) {
   .nav-links {
     display: none;
   }
@@ -2803,25 +2809,36 @@ a.service-card:hover {
 
 @media (prefers-reduced-motion: no-preference) {
   .hero-content,
-  .page-header { --reveal-start: 0s; }
+  .page-header,
+  .reveal-page > header { --reveal-start: 0s; }
 
   /* Start the body after the page heading, description and index. */
-  .content-section { --reveal-start: 0.4s; }
+  .content-section,
+  .reveal-page > section { --reveal-start: 0.4s; }
 
-  :is(.hero-content, .page-header, .content-section) > * {
+  :is(.hero-content, .page-header, .content-section, .reveal-page > header) > *,
+  .reveal-page > section {
     --reveal-order: 8;
     animation: fadeInUp 0.5s ease both;
     animation-delay: calc(var(--reveal-start) + var(--reveal-order) * 0.08s);
   }
 
-  :is(.hero-content, .page-header, .content-section) > :nth-child(1) { --reveal-order: 0; }
-  :is(.hero-content, .page-header, .content-section) > :nth-child(2) { --reveal-order: 1; }
-  :is(.hero-content, .page-header, .content-section) > :nth-child(3) { --reveal-order: 2; }
-  :is(.hero-content, .page-header, .content-section) > :nth-child(4) { --reveal-order: 3; }
-  :is(.hero-content, .page-header, .content-section) > :nth-child(5) { --reveal-order: 4; }
-  :is(.hero-content, .page-header, .content-section) > :nth-child(6) { --reveal-order: 5; }
-  :is(.hero-content, .page-header, .content-section) > :nth-child(7) { --reveal-order: 6; }
-  :is(.hero-content, .page-header, .content-section) > :nth-child(8) { --reveal-order: 7; }
+  :is(.hero-content, .page-header, .content-section, .reveal-page > header) > :nth-child(1),
+  .reveal-page > section:nth-of-type(1) { --reveal-order: 0; }
+  :is(.hero-content, .page-header, .content-section, .reveal-page > header) > :nth-child(2),
+  .reveal-page > section:nth-of-type(2) { --reveal-order: 1; }
+  :is(.hero-content, .page-header, .content-section, .reveal-page > header) > :nth-child(3),
+  .reveal-page > section:nth-of-type(3) { --reveal-order: 2; }
+  :is(.hero-content, .page-header, .content-section, .reveal-page > header) > :nth-child(4),
+  .reveal-page > section:nth-of-type(4) { --reveal-order: 3; }
+  :is(.hero-content, .page-header, .content-section, .reveal-page > header) > :nth-child(5),
+  .reveal-page > section:nth-of-type(5) { --reveal-order: 4; }
+  :is(.hero-content, .page-header, .content-section, .reveal-page > header) > :nth-child(6),
+  .reveal-page > section:nth-of-type(6) { --reveal-order: 5; }
+  :is(.hero-content, .page-header, .content-section, .reveal-page > header) > :nth-child(7),
+  .reveal-page > section:nth-of-type(7) { --reveal-order: 6; }
+  :is(.hero-content, .page-header, .content-section, .reveal-page > header) > :nth-child(8),
+  .reveal-page > section:nth-of-type(8) { --reveal-order: 7; }
 
   /* About has four introductory blocks before its following sections. */
   .about-page > section:not(.hero) { animation: fadeInUp 0.5s ease both; }
