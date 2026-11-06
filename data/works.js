@@ -12,7 +12,7 @@ export const works = [
   {
     id: 'miracle-garden',
     title: 'データの庭',
-    description: '水と肥料を変えて花を育て、実験結果をもとによく育つ組み合わせを探す、データ分析を体験できるゲームです。',
+    description: '水と肥料を変えて花を育て、実験結果をもとによく育つ組み合わせを探す、データ分析や統計学の感覚を身につけられるゲームです。',
     tags: ['data-statistics'],
     href: '/tools/miracle-garden/',
     action: '遊んでみる',
