@@ -15,6 +15,7 @@ export const works = [
     description: '水と肥料を変えて花を育て、実験結果をもとによく育つ組み合わせを探す、データ分析や統計学の感覚を身につけられるゲームです。',
     tags: ['data-statistics'],
     href: '/tools/miracle-garden/',
+    newTab: true,
     action: '遊んでみる',
     image: { path: '/images/og/data-garden-v3.png', width: 1200, height: 630, alt: 'データの庭。芽と光のロゴ、3本のコスモス、散布図を描いた紹介画像' },
     shareImage: { path: '/images/og/data-garden-v3.png', width: 1200, height: 630, type: 'image/png', alt: 'データの庭。芽と光のロゴ、3本のコスモス、散布図を描いた紹介画像' },

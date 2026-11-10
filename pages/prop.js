@@ -41,8 +41,8 @@ export default function Prop() {
         <header className={styles.introduction}>
           <h1 className={styles.title}><span>「{propCompany.name}」</span><span>について</span></h1>
           <div className={styles.introText}>
-            <p>合同会社prop（プロップ）は、西巻拓真が企業様との契約などをスムーズに実施できるように立ち上げた法人です。</p>
-            <p>会社という形は取っておりますが、基本的には個人として動く想定です。</p>
+            <p>合同会社prop（プロップ）は、西巻拓真が企業様との契約などをスムーズに実施するために立ち上げた法人です。</p>
+            <p>会社という形は取っておりますが、基本的には個人として動きます。</p>
           </div>
         </header>
 

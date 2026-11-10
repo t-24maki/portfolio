@@ -19,8 +19,8 @@ function ArrowIcon() {
 function WorkCard({ work }) {
   const { image } = work;
   const title = work.href ? (
-    work.external ? (
-      <a href={work.href} className="work-card-primary" target="_blank" rel="noopener noreferrer">{work.title}</a>
+    work.external || work.newTab ? (
+      <a href={work.href} className="work-card-primary" target="_blank" rel="noopener noreferrer" aria-label={`${work.title}（別タブで開きます）`}>{work.title}</a>
     ) : (
       <Link href={work.href} className="work-card-primary">{work.title}</Link>
     )

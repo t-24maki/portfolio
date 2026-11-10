@@ -87,6 +87,10 @@
   font-size: 0.75rem;
 }
 
+.companyInfo {
+  max-width: 42rem;
+}
+
 .companyInfo > div {
   display: grid;
   grid-template-columns: 8rem minmax(0, 1fr);
