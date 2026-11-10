@@ -76,15 +76,15 @@ export default function Prop() {
           <div className={styles.logos}>
             <figure className={styles.logoVariant}>
               <div className={styles.logoArtwork}>
-                <Image className={styles.brandIcon} src="/images/prop/prop_icon_color.png" alt="prop シンボルマーク" width={1024} height={1024} />
+                <Image className={styles.brandWordmark} src="/images/prop/prop_logo_color.png" alt="prop ロゴマーク" width={2400} height={1484} />
               </div>
-              <figcaption>シンボルマーク</figcaption>
+              <figcaption>ロゴマーク</figcaption>
             </figure>
             <figure className={styles.logoVariant}>
               <div className={styles.logoArtwork}>
-                <Image className={styles.brandWordmark} src="/images/prop/prop_logo_color.png" alt="prop ロゴタイプ" width={2400} height={768} />
+                <Image className={styles.brandIcon} src="/images/prop/prop_icon_color.png" alt="prop シンボルマーク" width={1024} height={1024} />
               </div>
-              <figcaption>ロゴタイプ</figcaption>
+              <figcaption>シンボルマーク</figcaption>
             </figure>
           </div>
         </section>
