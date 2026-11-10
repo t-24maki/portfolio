@@ -53,7 +53,7 @@ export default function Prop() {
             <div><dt>代表社員</dt><dd><Link href="/">{propCompany.representative}<span className={aboutStyles.linkArrow} aria-hidden="true">&nbsp;→</span></Link></dd></div>
             <div>
               <dt>事業内容</dt>
-              <dd>AI／データ利活用に関する助言・教育・開発支援</dd>
+              <dd>AI／データ利活用に関する支援・教育・コンテンツ開発</dd>
             </div>
             <div><dt>設立</dt><dd>{propCompany.established}</dd></div>
             <div><dt>資本金</dt><dd>{propCompany.capital}</dd></div>
